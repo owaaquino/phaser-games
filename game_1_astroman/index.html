@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setup</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1 {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <script type="module">
+      import Preload from './src/scenes/Preload.js';
+      import GameScene from './src/scenes/GameScene.js';
+
+      const config = {
+        type: Phaser.AUTO, // Uses WebGL if available, otherwise Canvas
+        parent: 'game-container', // displays the game in this div
+        width: 800,
+        height: 600,
+        physics: {
+          default: 'arcade',
+          arcade: {
+            gravity: { y: 300 }, // Objects will fall down
+            debug: true,
+          },
+        },
+        scale: {
+          mode: Phaser.Scale.FIT,
+          autoCenter: Phaser.Scale.CENTER_BOTH,
+        },
+        scene: [Preload, GameScene],
+      };
+
+      const game = new Phaser.Game(config);
+    </script>
+  </body>
+</html>
