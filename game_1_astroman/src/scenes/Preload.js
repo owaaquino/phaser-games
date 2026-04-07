@@ -25,13 +25,13 @@ class Preload extends Phaser.Scene {
     // 3. Load assets
     this.load.image(
       'tileimage',
-      '../../assets/sprites/runner-asset-sheet-with-transparency.png',
+      'assets/sprites/runner-asset-sheet-with-transparency.png',
     );
-    this.load.tilemapTiledJSON('level1', '../../assets/level1.json');
-    this.load.tilemapTiledJSON('level2', '../../assets/level2.json');
-    this.load.tilemapTiledJSON('level3', '../../assets/level3.json');
-    this.load.tilemapTiledJSON('level4', '../../assets/level4.json');
-    this.load.tilemapTiledJSON('level5', '../../assets/level5.json');
+    this.load.tilemapTiledJSON('level1', 'assets/level1.json');
+    this.load.tilemapTiledJSON('level2', 'assets/level2.json');
+    this.load.tilemapTiledJSON('level3', 'assets/level3.json');
+    this.load.tilemapTiledJSON('level4', 'assets/level4.json');
+    this.load.tilemapTiledJSON('level5', 'assets/level5.json');
   }
 
   create() {
