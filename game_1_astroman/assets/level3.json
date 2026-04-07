@@ -292,6 +292,65 @@
         {
          "columns":16,
          "firstgid":1,
+         "image":"sprites\/runner-asset-sheet-with-transparency.png",
+         "imageheight":480,
+         "imagewidth":512,
+         "margin":0,
+         "name":"runner-asset-sheet",
+         "spacing":0,
+         "tilecount":240,
+         "tileheight":32,
+         "tiles":[
+                {
+                 "id":153,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":154,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":155,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":156,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":169,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":16,
+         "firstgid":241,
          "image":"..\/..\/..\/..\/..\/..\/Downloads\/Space Runner Assets - 27-11-20\/Space Runner Assets - 27-11-20\/runner-asset-sheet-with-transparency.png",
          "imageheight":480,
          "imagewidth":512,
@@ -347,10 +406,6 @@
                         }]
                 }],
          "tilewidth":32
-        }, 
-        {
-         "firstgid":241,
-         "source":"tilesets\/runner-asset-sheet.tsx"
         }],
  "tilewidth":32,
  "type":"map",
