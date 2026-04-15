@@ -55,7 +55,11 @@ export class Player {
     }
 
     if (cursors.up.isDown && this.player.body.blocked.down) {
-      this.player.setVelocityY(-350);
+      this.player.setVelocityY(-200);
+    }
+
+    if (cursors.space.isDown) {
+      this.player.setVelocityY(-100);
     }
 
     if (!this.player.body.blocked.down) {
