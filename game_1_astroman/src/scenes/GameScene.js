@@ -16,17 +16,13 @@ class GameScene extends Phaser.Scene {
 
     const frame = map.createLayer('framebound', tileset, 0, 0);
     const platforms = map.createLayer('platforms', tileset, 0, 0);
-    const startingPoint = map.findObject(
-      'player_starting_point',
-      (obj) => true,
-    );
 
     // Create input keys
     this.cursors = this.input.keyboard.createCursorKeys();
 
     // Create player
-    const playerInstance = new Player(this, startingPoint);
-    playerInstance.createPlayer();
+    const playerInstance = new Player(this);
+    playerInstance.createPlayer(map);
     this.player = playerInstance.player; // Store sprite on scene
     this.playerController = playerInstance; // Store controller for updates
 
