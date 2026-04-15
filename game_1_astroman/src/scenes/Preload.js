@@ -32,6 +32,29 @@ class Preload extends Phaser.Scene {
     this.load.tilemapTiledJSON('level3', 'assets/level3.json');
     this.load.tilemapTiledJSON('level4', 'assets/level4.json');
     this.load.tilemapTiledJSON('level5', 'assets/level5.json');
+
+    this.load.spritesheet(
+      'astronaut-idle',
+      'assets/sprites/astronaut-idle.png',
+      {
+        frameWidth: 24,
+        frameHeight: 24,
+      },
+    );
+
+    this.load.spritesheet('astronaut-run', 'assets/sprites/astronaut-run.png', {
+      frameWidth: 24,
+      frameHeight: 24,
+    });
+
+    this.load.spritesheet(
+      'astronaut-jump',
+      'assets/sprites/astronaut-jump.png',
+      {
+        frameWidth: 24,
+        frameHeight: 24,
+      },
+    );
   }
 
   create() {
