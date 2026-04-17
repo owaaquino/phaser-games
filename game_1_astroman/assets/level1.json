@@ -124,6 +124,83 @@
         }, 
         {
          "draworder":"topdown",
+         "id":9,
+         "name":"enemy_limits",
+         "objects":[
+                {
+                 "height":32,
+                 "id":19,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":430,
+                 "y":157.333333333333
+                }, 
+                {
+                 "height":32,
+                 "id":20,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":594,
+                 "y":156
+                }, 
+                {
+                 "height":32,
+                 "id":21,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":557.166666666667,
+                 "y":256.5
+                }, 
+                {
+                 "height":32,
+                 "id":22,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":210,
+                 "y":255
+                }, 
+                {
+                 "height":32,
+                 "id":23,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":175.666666666667,
+                 "y":158.333333333333
+                }, 
+                {
+                 "height":32,
+                 "id":24,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":338.333333333333,
+                 "y":157.666666666667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":6,
          "name":"diamonds",
          "objects":[
@@ -184,7 +261,7 @@
         {
          "draworder":"topdown",
          "id":7,
-         "name":"alien",
+         "name":"aliens",
          "objects":[
                 {
                  "gid":97,
@@ -195,8 +272,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":93.3333333333333,
-                 "y":288
+                 "x":97.3333333333333,
+                 "y":202
                 }, 
                 {
                  "gid":97,
@@ -275,8 +352,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":12,
+ "nextlayerid":10,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

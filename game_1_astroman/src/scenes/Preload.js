@@ -57,6 +57,21 @@ class Preload extends Phaser.Scene {
     );
 
     this.load.image('diamond', 'assets/sprites/diamond.png');
+
+    this.load.spritesheet('alien-idle', 'assets/sprites/alien-idle.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+
+    this.load.spritesheet('alien-run', 'assets/sprites/alien-run.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+
+    this.load.spritesheet('alien-jump', 'assets/sprites/alien-jump.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
   }
 
   create() {

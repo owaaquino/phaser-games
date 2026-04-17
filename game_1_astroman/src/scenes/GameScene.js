@@ -1,5 +1,6 @@
 import { Player } from '../components/player.js';
 import { Diamonds } from '../components/collectibles.js';
+import { Enemies } from '../components/enemies.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -7,7 +8,7 @@ class GameScene extends Phaser.Scene {
   }
   create() {
     // Create level
-    const map = this.make.tilemap({ key: 'level1' });
+    const map = this.make.tilemap({ key: 'level5' });
     const tileset = map.addTilesetImage('runner-asset-sheet', 'tileimage');
 
     map.createLayer('background1', tileset, 0, 0);
@@ -33,12 +34,27 @@ class GameScene extends Phaser.Scene {
     this.diamonds = diamondsInstance.diamonds; // Store group on scene
     this.totalDiamonds = this.diamonds.getChildren().length; // Store initial count
 
+    // Create enemies object
+    const enemyInstance = new Enemies(this);
+    enemyInstance.createEnemies(map);
+    this.enemies = enemyInstance.enemyObjects; // Store group on scene
+    this.enemyObjects = enemyInstance; // Store controller for updates
+    this.enemyLimits = enemyInstance.enemyLimits; // Store controller for updates
+
     // Object layers collisions
 
     frame.setCollisionByProperty({ collides: true });
     platforms.setCollisionByProperty({ collides: true });
     this.physics.add.collider(this.player, frame);
     this.physics.add.collider(this.player, platforms);
+
+    this.physics.add.collider(this.enemies, frame);
+    this.physics.add.collider(this.enemies, platforms);
+    this.physics.add.collider(this.enemies, this.enemyLimits, (enemy, wall) => {
+      enemy.body.velocity.x * -1; // Reverse direction});
+    });
+    this.physics.add.collider(this.enemyLimits, frame);
+    this.physics.add.collider(this.enemyLimits, platforms);
 
     this.physics.add.overlap(this.player, this.diamonds, (player, diamond) => {
       diamond.destroy(); // Remove the diamond from the game
@@ -47,6 +63,7 @@ class GameScene extends Phaser.Scene {
 
   update() {
     this.playerController.update(this.cursors);
+    this.enemyObjects.update();
   }
 }
 

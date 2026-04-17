@@ -147,6 +147,105 @@
         }, 
         {
          "draworder":"topdown",
+         "id":8,
+         "name":"enemy_limits",
+         "objects":[
+                {
+                 "height":32,
+                 "id":14,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":209,
+                 "y":189
+                }, 
+                {
+                 "height":32,
+                 "id":15,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":48,
+                 "y":188
+                }, 
+                {
+                 "height":32,
+                 "id":16,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":491,
+                 "y":318
+                }, 
+                {
+                 "height":32,
+                 "id":17,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":595,
+                 "y":317
+                }, 
+                {
+                 "height":32,
+                 "id":18,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":279,
+                 "y":316
+                }, 
+                {
+                 "height":32,
+                 "id":19,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":173,
+                 "y":317
+                }, 
+                {
+                 "height":32,
+                 "id":20,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":559,
+                 "y":188
+                }, 
+                {
+                 "height":32,
+                 "id":21,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":719,
+                 "y":190
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":5,
          "name":"diamonds",
          "objects":[
@@ -183,8 +282,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":498,
-                 "y":106
+                 "x":499,
+                 "y":122
                 }, 
                 {
                  "gid":75,
@@ -195,8 +294,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":272,
-                 "y":110
+                 "x":271,
+                 "y":122
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -287,8 +386,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":8,
- "nextobjectid":14,
+ "nextlayerid":9,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
