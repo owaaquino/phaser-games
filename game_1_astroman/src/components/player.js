@@ -1,10 +1,9 @@
 export class Player {
-  constructor(scene, startingPoint) {
+  constructor(scene) {
     this.scene = scene;
-    this.startingPoint = startingPoint;
   }
 
-  createPlayer() {
+  createPlayer(map) {
     this.scene.anims.create({
       key: 'walk',
       frames: this.scene.anims.generateFrameNumbers('astronaut-run', {
@@ -35,9 +34,14 @@ export class Player {
       repeat: -1,
     });
 
+    const startingPoint = map.findObject(
+      'player_starting_point',
+      (obj) => true,
+    );
+
     this.player = this.scene.physics.add.sprite(
-      this.startingPoint.x,
-      this.startingPoint.y - this.startingPoint.height,
+      startingPoint.x,
+      startingPoint.y - startingPoint.height,
       'astronaut-idle',
     );
     this.player.setCollideWorldBounds(true);
