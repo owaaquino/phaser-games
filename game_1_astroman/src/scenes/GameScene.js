@@ -1,4 +1,5 @@
 import { Player } from '../components/player.js';
+import { Diamonds } from '../components/collectibles.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -6,7 +7,7 @@ class GameScene extends Phaser.Scene {
   }
   create() {
     // Create level
-    const map = this.make.tilemap({ key: 'level5' });
+    const map = this.make.tilemap({ key: 'level1' });
     const tileset = map.addTilesetImage('runner-asset-sheet', 'tileimage');
 
     map.createLayer('background1', tileset, 0, 0);
@@ -26,12 +27,22 @@ class GameScene extends Phaser.Scene {
     this.player = playerInstance.player; // Store sprite on scene
     this.playerController = playerInstance; // Store controller for updates
 
+    // Create diamonds object
+    const diamondsInstance = new Diamonds(this);
+    diamondsInstance.createDiamonds(map);
+    this.diamonds = diamondsInstance.diamonds; // Store group on scene
+    this.totalDiamonds = this.diamonds.getChildren().length; // Store initial count
+
     // Object layers collisions
 
     frame.setCollisionByProperty({ collides: true });
     platforms.setCollisionByProperty({ collides: true });
     this.physics.add.collider(this.player, frame);
     this.physics.add.collider(this.player, platforms);
+
+    this.physics.add.overlap(this.player, this.diamonds, (player, diamond) => {
+      diamond.destroy(); // Remove the diamond from the game
+    });
   }
 
   update() {

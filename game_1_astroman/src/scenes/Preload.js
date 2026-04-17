@@ -55,6 +55,8 @@ class Preload extends Phaser.Scene {
         frameHeight: 24,
       },
     );
+
+    this.load.image('diamond', 'assets/sprites/diamond.png');
   }
 
   create() {
