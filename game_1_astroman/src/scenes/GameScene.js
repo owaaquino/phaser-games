@@ -59,6 +59,11 @@ class GameScene extends Phaser.Scene {
     this.physics.add.overlap(this.player, this.diamonds, (player, diamond) => {
       diamond.destroy(); // Remove the diamond from the game
     });
+    this.physics.add.collider(this.player, this.enemies, () => {
+      this.playerController.isDead = true;
+
+      playerInstance.playerDeath();
+    });
   }
 
   update() {
