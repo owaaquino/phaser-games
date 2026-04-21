@@ -1,3 +1,5 @@
+import { createAnimations } from '../utils/animations.js';
+
 class Preload extends Phaser.Scene {
   constructor() {
     super('Preload');
@@ -23,6 +25,8 @@ class Preload extends Phaser.Scene {
     });
 
     // 3. Load assets
+    this.load.json('animation_json', 'assets/data/animations.json');
+
     this.load.image(
       'tileimage',
       'assets/sprites/runner-asset-sheet-with-transparency.png',
@@ -56,6 +60,15 @@ class Preload extends Phaser.Scene {
       },
     );
 
+    this.load.spritesheet(
+      'astronaut-death',
+      'assets/sprites/astronaut-death.png',
+      {
+        frameWidth: 32,
+        frameHeight: 32,
+      },
+    );
+
     this.load.image('diamond', 'assets/sprites/diamond.png');
 
     this.load.spritesheet('alien-idle', 'assets/sprites/alien-idle.png', {
@@ -75,6 +88,9 @@ class Preload extends Phaser.Scene {
   }
 
   create() {
+    // Create Animation
+    createAnimations(this, this.cache.json.get('animation_json'));
+
     this.scene.start('GameScene');
   }
 }
