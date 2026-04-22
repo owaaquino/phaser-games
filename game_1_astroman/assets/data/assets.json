@@ -1,0 +1,119 @@
+[
+  {
+    "path": "assets/sprites",
+    "files": [
+      {
+        "type": "spritesheet",
+        "key": "astronaut-run",
+        "url": "astronaut-run.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "astronaut-jump",
+        "url": "astronaut-jump.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "astronaut-death",
+        "url": "astronaut-death.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 32
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "astronaut-idle",
+        "url": "astronaut-idle.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "alien-idle",
+        "url": "alien-idle.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 32
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "alien-death",
+        "url": "alien-death.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 32
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "alien-jump",
+        "url": "alien-jump.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 32
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "alien-run",
+        "url": "alien-run.png",
+        "frameConfig": {
+          "frameWidth": 32,
+          "frameHeight": 32
+        }
+      },
+      {
+        "type": "image",
+        "key": "tileimage",
+        "url": "runner-asset-sheet-with-transparency.png"
+      },
+      {
+        "type": "image",
+        "key": "diamond",
+        "url": "diamond.png"
+      }
+    ]
+  },
+  {
+    "path": "assets/levels",
+    "files": [
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level1",
+        "url": "level1.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level2",
+        "url": "level2.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level3",
+        "url": "level3.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level4",
+        "url": "level4.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level5",
+        "url": "level5.json"
+      }
+    ]
+  }
+]
