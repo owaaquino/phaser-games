@@ -1,7 +1,8 @@
 export class Player {
-  constructor(scene) {
+  constructor(scene, fuel) {
     this.scene = scene;
     this.isDead = false;
+    this.fuel = fuel;
   }
 
   createPlayer(map) {
@@ -37,7 +38,7 @@ export class Player {
     });
   }
 
-  update(cursors) {
+  update(cursors, fuel) {
     if (this.isDead) {
       return;
     }
@@ -57,8 +58,13 @@ export class Player {
     }
 
     // jetpack boost
-    if (cursors.space.isDown) {
+    if (cursors.space.isDown && this.fuel > 0) {
       this.player.setVelocityY(-100);
+      this.fuel -= 1; // Decrease fuel
+    } else if (this.player.body.blocked.down) {
+      if (this.fuel < 100) {
+        this.fuel += 10; // Regenerate fuel when on the ground
+      } // Ensure fuel doesn't go negative
     }
 
     if (!this.player.body.blocked.down) {
