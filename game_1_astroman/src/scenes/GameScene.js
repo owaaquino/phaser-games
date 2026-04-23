@@ -9,6 +9,7 @@ class GameScene extends Phaser.Scene {
   create() {
     //TODO: Transfer the variable on separate file
     this.fuel = 100;
+    this.score = 0;
 
     // Create level
     const map = this.make.tilemap({ key: 'level5' });
@@ -60,6 +61,7 @@ class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.enemyLimits, platforms);
 
     this.physics.add.overlap(this.player, this.diamonds, (player, diamond) => {
+      this.score += 10; // Increase score
       diamond.destroy(); // Remove the diamond from the game
     });
     this.physics.add.collider(this.player, this.enemies, () => {
