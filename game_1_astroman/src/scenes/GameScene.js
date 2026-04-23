@@ -2,15 +2,13 @@ import { Player } from '../components/player.js';
 import { Diamonds } from '../components/collectibles.js';
 import { Enemies } from '../components/enemies.js';
 
+import GDM from '../GameManager.js';
+
 class GameScene extends Phaser.Scene {
   constructor() {
     super('GameScene');
   }
   create() {
-    //TODO: Transfer the variable on separate file
-    this.fuel = 100;
-    this.score = 0;
-
     // Create level
     const map = this.make.tilemap({ key: 'level5' });
     const tileset = map.addTilesetImage('runner-asset-sheet', 'tileimage');
@@ -27,7 +25,7 @@ class GameScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
 
     // Create player
-    const playerInstance = new Player(this, this.fuel);
+    const playerInstance = new Player(this);
     playerInstance.createPlayer(map);
     this.player = playerInstance.player; // Store sprite on scene
     this.playerController = playerInstance; // Store controller for updates
@@ -61,11 +59,11 @@ class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.enemyLimits, platforms);
 
     this.physics.add.overlap(this.player, this.diamonds, (player, diamond) => {
-      this.score += 10; // Increase score
+      GDM.updateScore(10); // Increase score
       diamond.destroy(); // Remove the diamond from the game
     });
     this.physics.add.collider(this.player, this.enemies, () => {
-      this.playerController.isDead = true;
+      GDM.state.isDead = true;
 
       playerInstance.playerDeath();
     });

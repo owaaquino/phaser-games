@@ -1,8 +1,8 @@
+import GDM from '../GameManager.js';
+
 export class Player {
-  constructor(scene, fuel) {
+  constructor(scene) {
     this.scene = scene;
-    this.isDead = false;
-    this.fuel = fuel;
   }
 
   createPlayer(map) {
@@ -20,7 +20,7 @@ export class Player {
   }
 
   playerDeath() {
-    this.isDead = true;
+    GDM.state.isDead = true;
 
     this.scene.physics.world.pause();
 
@@ -39,7 +39,7 @@ export class Player {
   }
 
   update(cursors, fuel) {
-    if (this.isDead) {
+    if (GDM.state.isDead) {
       return;
     }
 
@@ -58,12 +58,12 @@ export class Player {
     }
 
     // jetpack boost
-    if (cursors.space.isDown && this.fuel > 0) {
+    if (cursors.space.isDown && GDM.state.fuel > 0) {
       this.player.setVelocityY(-100);
-      this.fuel -= 1; // Decrease fuel
+      GDM.updateFuel(-1); // Decrease fuel
     } else if (this.player.body.blocked.down) {
-      if (this.fuel < 100) {
-        this.fuel += 10; // Regenerate fuel when on the ground
+      if (GDM.state.fuel < 100) {
+        GDM.updateFuel(10); // Regenerate fuel when on the ground
       } // Ensure fuel doesn't go negative
     }
 

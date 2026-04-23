@@ -1,3 +1,5 @@
+import GDM from '../GameManager.js';
+
 class GameOver extends Phaser.Scene {
   constructor() {
     super('GameOverScene');
@@ -11,12 +13,20 @@ class GameOver extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
+    this.add
+      .text(400, 370, `Final Score: ${GDM.state.score}`, {
+        fontSize: '24px',
+        fill: '#fff',
+      })
+      .setOrigin(0.5);
+
     let retryButton = this.add
       .text(400, 450, 'RETRY', { fontSize: '24px', fill: '#fff' })
       .setOrigin(0.5)
       .setInteractive();
 
     retryButton.on('pointerdown', () => {
+      GDM.resetGame();
       this.scene.start('GameScene');
     });
   }
