@@ -1,4 +1,4 @@
-import { createAnimations } from '../utils/animations.js';
+import { Animate } from '../utils/animations.js';
 
 class Preload extends Phaser.Scene {
   constructor() {
@@ -31,7 +31,11 @@ class Preload extends Phaser.Scene {
 
   create() {
     // Create Animation
-    createAnimations(this, this.cache.json.get('animation_json'));
+    this.createAnimation = new Animate(
+      this,
+      this.cache.json.get('animation_json'),
+    );
+    this.createAnimation.create();
 
     this.scene.start('GameScene');
   }
