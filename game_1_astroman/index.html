@@ -27,6 +27,7 @@
     <script type="module">
       import Preload from './src/scenes/Preload.js';
       import GameScene from './src/scenes/GameScene.js';
+      import GameOver from './src/scenes/GameOver.js';
 
       const config = {
         type: Phaser.AUTO, // Uses WebGL if available, otherwise Canvas
@@ -37,14 +38,14 @@
           default: 'arcade',
           arcade: {
             gravity: { y: 500 }, // Objects will fall down
-            debug: true,
+            debug: false,
           },
         },
         scale: {
           mode: Phaser.Scale.FIT,
           autoCenter: Phaser.Scale.CENTER_BOTH,
         },
-        scene: [Preload, GameScene],
+        scene: [Preload, GameScene, GameOver],
       };
 
       const game = new Phaser.Game(config);

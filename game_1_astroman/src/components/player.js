@@ -1,39 +1,11 @@
+import GDM from '../GameManager.js';
+
 export class Player {
   constructor(scene) {
     this.scene = scene;
   }
 
   createPlayer(map) {
-    this.scene.anims.create({
-      key: 'walk',
-      frames: this.scene.anims.generateFrameNumbers('astronaut-run', {
-        start: 0,
-        end: 3,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
-
-    this.scene.anims.create({
-      key: 'idle',
-      frames: this.scene.anims.generateFrameNumbers('astronaut-idle', {
-        start: 0,
-        end: 3,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
-
-    this.scene.anims.create({
-      key: 'jump',
-      frames: this.scene.anims.generateFrameNumbers('astronaut-jump', {
-        start: 0,
-        end: 3,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
-
     const startingPoint = map.findObject(
       'player_starting_point',
       (obj) => true,
@@ -47,7 +19,30 @@ export class Player {
     this.player.setCollideWorldBounds(true);
   }
 
-  update(cursors) {
+  playerDeath() {
+    GDM.state.isDead = true;
+
+    this.scene.physics.world.pause();
+
+    this.player.anims.play('player-death', true);
+
+    this.scene.tweens.add({
+      targets: this.player,
+      y: this.player.y - 10, // Jump up slightly
+      angle: 180, // Flip upside down
+      duration: 1000,
+      ease: 'Power2',
+      onComplete: () => {
+        this.scene.scene.start('GameOverScene');
+      },
+    });
+  }
+
+  update(cursors, fuel) {
+    if (GDM.state.isDead) {
+      return;
+    }
+
     if (cursors.left.isDown) {
       this.player.setVelocityX(-160);
       this.player.flipX = true;
@@ -62,16 +57,22 @@ export class Player {
       this.player.setVelocityY(-200);
     }
 
-    if (cursors.space.isDown) {
-      this.player.setVelocityY(-100);
+    // jetpack boost
+    if (cursors.space.isDown && GDM.state.fuel > 0) {
+      this.player.setVelocityY(-150);
+      GDM.updateFuel(-1); // Decrease fuel
+    } else if (this.player.body.blocked.down) {
+      if (GDM.state.fuel < 100) {
+        GDM.updateFuel(10); // Regenerate fuel when on the ground
+      } // Ensure fuel doesn't go negative
     }
 
     if (!this.player.body.blocked.down) {
-      this.player.anims.play('jump', true);
+      this.player.anims.play('player-jump', true);
     } else if (this.player.body.velocity.x !== 0) {
-      this.player.anims.play('walk', true);
+      this.player.anims.play('player-walk', true);
     } else {
-      this.player.anims.play('idle', true);
+      this.player.anims.play('player-idle', true);
     }
   }
 }

@@ -4,26 +4,6 @@ export class Enemies {
   }
 
   createEnemies(map) {
-    this.scene.anims.create({
-      key: 'alien-walk',
-      frames: this.scene.anims.generateFrameNumbers('alien-run', {
-        start: 0,
-        end: 3,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
-
-    this.scene.anims.create({
-      key: 'alien-idle',
-      frames: this.scene.anims.generateFrameNumbers('alien-idle', {
-        start: 0,
-        end: 3,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
-
     const enemyObjects = map.getObjectLayer('aliens')['objects'];
     this.enemyObjects = this.scene.physics.add.group();
 
@@ -31,9 +11,9 @@ export class Enemies {
     this.enemyLimits = this.scene.physics.add.group();
 
     enemyObjects.forEach((object) => {
-      let obj = this.enemyObjects.create(object.x, object.y, 'alien-idle');
-      obj.setSize(24, 24);
-      obj.setOffset(4, 2);
+      const obj = this.enemyObjects.create(object.x, object.y, 'alien-idle');
+      obj.setSize(15, 15);
+      obj.setOffset(8, 10);
     });
 
     enemyLimits.forEach((object) => {

@@ -1,3 +1,5 @@
+import { Animate } from '../utils/animations.js';
+
 class Preload extends Phaser.Scene {
   constructor() {
     super('Preload');
@@ -23,58 +25,18 @@ class Preload extends Phaser.Scene {
     });
 
     // 3. Load assets
-    this.load.image(
-      'tileimage',
-      'assets/sprites/runner-asset-sheet-with-transparency.png',
-    );
-    this.load.tilemapTiledJSON('level1', 'assets/level1.json');
-    this.load.tilemapTiledJSON('level2', 'assets/level2.json');
-    this.load.tilemapTiledJSON('level3', 'assets/level3.json');
-    this.load.tilemapTiledJSON('level4', 'assets/level4.json');
-    this.load.tilemapTiledJSON('level5', 'assets/level5.json');
-
-    this.load.spritesheet(
-      'astronaut-idle',
-      'assets/sprites/astronaut-idle.png',
-      {
-        frameWidth: 24,
-        frameHeight: 24,
-      },
-    );
-
-    this.load.spritesheet('astronaut-run', 'assets/sprites/astronaut-run.png', {
-      frameWidth: 24,
-      frameHeight: 24,
-    });
-
-    this.load.spritesheet(
-      'astronaut-jump',
-      'assets/sprites/astronaut-jump.png',
-      {
-        frameWidth: 24,
-        frameHeight: 24,
-      },
-    );
-
-    this.load.image('diamond', 'assets/sprites/diamond.png');
-
-    this.load.spritesheet('alien-idle', 'assets/sprites/alien-idle.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-
-    this.load.spritesheet('alien-run', 'assets/sprites/alien-run.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-
-    this.load.spritesheet('alien-jump', 'assets/sprites/alien-jump.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
+    this.load.pack('asset_pack', 'assets/data/assets.json');
+    this.load.json('animation_json', 'assets/data/animations.json');
   }
 
   create() {
+    // Create Animation
+    this.createAnimation = new Animate(
+      this,
+      this.cache.json.get('animation_json'),
+    );
+    this.createAnimation.create();
+
     this.scene.start('GameScene');
   }
 }

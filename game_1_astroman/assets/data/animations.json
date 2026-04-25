@@ -1,0 +1,50 @@
+[
+  {
+    "key": "player-walk",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "astronaut-run"
+  },
+  {
+    "key": "player-jump",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "astronaut-jump"
+  },
+  {
+    "key": "player-death",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "astronaut-death"
+  },
+  {
+    "key": "player-idle",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "astronaut-idle"
+  },
+  {
+    "key": "alien-walk",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "alien-run"
+  },
+  {
+    "key": "alien-jump",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "alien-jump"
+  },
+  {
+    "key": "alien-death",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "alien-death"
+  },
+  {
+    "key": "alien-idle",
+    "frameRate": 10,
+    "repeat": -1,
+    "assetKey": "alien-idle"
+  }
+]
