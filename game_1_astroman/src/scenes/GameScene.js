@@ -3,14 +3,18 @@ import { Diamonds } from '../components/collectibles.js';
 import { Enemies } from '../components/enemies.js';
 
 import GDM from '../GameManager.js';
+import { transitionToNextLevel } from '../utils/transitionToNextLevel.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
     super('GameScene');
   }
   create() {
+    const levelNumber = GDM.state.currentLevel;
+    const levelKey = `level${levelNumber}`;
+
     // Create level
-    const map = this.make.tilemap({ key: 'level5' });
+    const map = this.make.tilemap({ key: levelKey });
     const tileset = map.addTilesetImage('runner-asset-sheet', 'tileimage');
 
     map.createLayer('background1', tileset, 0, 0);
@@ -34,7 +38,7 @@ class GameScene extends Phaser.Scene {
     const diamondsInstance = new Diamonds(this);
     diamondsInstance.createDiamonds(map);
     this.diamonds = diamondsInstance.diamonds; // Store group on scene
-    this.totalDiamonds = this.diamonds.getChildren().length; // Store initial count
+    GDM.state.totalDiamonds = this.diamonds.getChildren().length; // Store initial count
 
     // Create enemies object
     const enemyInstance = new Enemies(this);
@@ -60,6 +64,7 @@ class GameScene extends Phaser.Scene {
 
     this.physics.add.overlap(this.player, this.diamonds, (player, diamond) => {
       GDM.updateScore(10); // Increase score
+      GDM.collectedDiamond(); // Update diamond count and check for level completion
       diamond.destroy(); // Remove the diamond from the game
     });
     this.physics.add.collider(this.player, this.enemies, () => {
@@ -67,6 +72,15 @@ class GameScene extends Phaser.Scene {
 
       playerInstance.playerDeath();
     });
+
+    GDM.once(
+      'LEVEL_COMPLETE',
+      () => {
+        const transition = new transitionToNextLevel(this);
+        transition.transition();
+      },
+      this,
+    );
   }
 
   update() {

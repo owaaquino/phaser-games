@@ -6,6 +6,10 @@ class GameManager extends Phaser.Events.EventEmitter {
         score: 0,
         fuel: 100,
         isDead: false,
+        currentLevel: 1, // starting level
+        diamondsCollected: 0, // track collected diamonds
+        totalDiamonds: 0, // check how many diamonds in the level
+        totalLevels: 5, // total number of levels in the game
       };
       GameManager.instance = this;
     }
@@ -27,11 +31,21 @@ class GameManager extends Phaser.Events.EventEmitter {
     this.emit('SCORE_CHANGED', this.state.score);
   }
 
+  collectedDiamond() {
+    this.state.diamondsCollected++;
+    this.emit('DIAMOND_COLLECTED', this.state.diamondsCollected);
+
+    if (this.state.diamondsCollected >= this.state.totalDiamonds) {
+      this.emit('LEVEL_COMPLETE');
+    }
+  }
+
   resetGame() {
     this.state.fuel = 100;
     this.state.score = 0;
     this.state.isDead = false;
     this.emit('FUEL_CHANGED', 100);
+    this.state.currentLevel = 1;
   }
 }
 

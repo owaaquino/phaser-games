@@ -59,7 +59,7 @@ export class Player {
 
     // jetpack boost
     if (cursors.space.isDown && GDM.state.fuel > 0) {
-      this.player.setVelocityY(-100);
+      this.player.setVelocityY(-150);
       GDM.updateFuel(-1); // Decrease fuel
     } else if (this.player.body.blocked.down) {
       if (GDM.state.fuel < 100) {
