@@ -12,7 +12,7 @@ export class transitionToNextLevel {
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
       if (GDM.state.currentLevel >= GDM.state.totalLevels) {
         // If all levels are completed, go to Game Over or Victory scene
-        this.scene.scene.start('GameOverScene'); // Change to 'VictoryScene' if you have one
+        this.scene.scene.start('VictoryScene'); // Change to 'VictoryScene' if you have one
         return;
       }
       GDM.state.currentLevel = GDM.state.currentLevel + 1; // Increment level
