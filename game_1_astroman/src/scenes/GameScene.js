@@ -13,12 +13,19 @@ class GameScene extends Phaser.Scene {
     const levelNumber = GDM.state.currentLevel;
     const levelKey = `level${levelNumber}`;
 
+    // UI Score display
+    if (!this.scene.isActive('UIScene')) {
+      this.scene.launch('UIScene');
+    }
+    this.scene.bringToTop('UIScene');
+
     // Create level
     const map = this.make.tilemap({ key: levelKey });
     const tileset = map.addTilesetImage('runner-asset-sheet', 'tileimage');
 
     map.createLayer('background1', tileset, 0, 0);
     map.createLayer('background2', tileset, 0, 0);
+    console.log(GDM.state);
 
     const movingplatforms = map.createLayer('moving-platform', tileset, 0, 0);
 
@@ -57,7 +64,7 @@ class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.enemies, frame);
     this.physics.add.collider(this.enemies, platforms);
     this.physics.add.collider(this.enemies, this.enemyLimits, (enemy, wall) => {
-      enemy.body.velocity.x * -1; // Reverse direction});
+      enemy.setVelocityX(enemy.body.velocity.x * -1); // Reverse direction});
     });
     this.physics.add.collider(this.enemyLimits, frame);
     this.physics.add.collider(this.enemyLimits, platforms);
@@ -73,18 +80,22 @@ class GameScene extends Phaser.Scene {
       playerInstance.playerDeath();
     });
 
-    GDM.once(
-      'LEVEL_COMPLETE',
-      () => {
-        const transition = new transitionToNextLevel(this);
-        transition.transition();
-      },
-      this,
-    );
+    const levelCompleteHandler = () => {
+      const transition = new transitionToNextLevel(this);
+      transition.transition();
+    };
+
+    GDM.once('LEVEL_COMPLETE', levelCompleteHandler, this);
+
+    GDM.once('shutdown', () => {
+      GDM.off('LEVEL_COMPLETE', levelCompleteHandler, this);
+    });
   }
 
   update() {
-    this.playerController.update(this.cursors);
+    if (!GDM.state.isDead) {
+      this.playerController.update(this.cursors);
+    }
     this.enemyObjects.update();
   }
 }

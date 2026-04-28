@@ -45,7 +45,13 @@ class GameManager extends Phaser.Events.EventEmitter {
     this.state.score = 0;
     this.state.isDead = false;
     this.emit('FUEL_CHANGED', 100);
+    this.emit('SCORE_CHANGED', 0);
+    this.emit('DIAMOND_COLLECTED', 0);
+    this.state.diamondsCollected = 0;
+    this.state.totalDiamonds = 0;
     this.state.currentLevel = 1;
+
+    this.removeAllListeners(); // Clear all listeners to prevent duplicates on restart
   }
 }
 
