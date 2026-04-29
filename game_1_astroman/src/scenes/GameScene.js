@@ -75,9 +75,8 @@ class GameScene extends Phaser.Scene {
       diamond.destroy(); // Remove the diamond from the game
     });
     this.physics.add.collider(this.player, this.enemies, () => {
-      GDM.state.isDead = true;
-
       playerInstance.playerDeath();
+      GDM.state.isDead = true;
     });
 
     const levelCompleteHandler = () => {
@@ -93,9 +92,9 @@ class GameScene extends Phaser.Scene {
   }
 
   update() {
-    if (!GDM.state.isDead) {
-      this.playerController.update(this.cursors);
-    }
+    if (GDM.state.isDead) return;
+
+    this.playerController.update(this.cursors);
     this.enemyObjects.update();
   }
 }

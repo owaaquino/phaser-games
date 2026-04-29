@@ -28,6 +28,11 @@ class GameOver extends Phaser.Scene {
       .setInteractive();
 
     retryButton.on('pointerdown', () => {
+      this.game.scene.scenes.forEach((scene) => {
+        if (scene.tweens) {
+          scene.tweens.killAll(); // Stop all tweens to prevent lingering animations
+        }
+      });
       GDM.resetGame();
       this.scene.start('GameScene');
     });

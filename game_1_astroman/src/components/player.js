@@ -22,11 +22,9 @@ export class Player {
   }
 
   playerDeath() {
+    this.scene.physics.pause();
+    this.player.body.enable = false; // Disable physics to prevent further movement
     GDM.state.isDead = true;
-
-    this.scene.physics.world.pause();
-
-    this.player.anims.play('player-death', true);
 
     this.scene.tweens.add({
       targets: this.player,
@@ -35,6 +33,7 @@ export class Player {
       duration: 1000,
       ease: 'Power2',
       onComplete: () => {
+        this.scene.scene.stop('UIScene'); // Stop the UI scene to prevent overlap
         this.scene.scene.start('GameOverScene');
       },
     });
