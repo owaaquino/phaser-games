@@ -11,14 +11,14 @@ export class transitionToNextLevel {
 
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
       if (GDM.state.currentLevel >= GDM.state.totalLevels) {
-        // If all levels are completed, go to Game Over or Victory scene
-        this.scene.scene.start('VictoryScene'); // Change to 'VictoryScene' if you have one
+        // If all levels are completed, go to Victory scene
+        this.scene.scene.start('VictoryScene');
         return;
+      } else {
+        this.scene.scene.start('TransitionScene');
+        GDM.state.currentLevel = GDM.state.currentLevel + 1; // Increment level
+        GDM.state.diamondsCollected = 0; // Reset for next level
       }
-      GDM.state.currentLevel = GDM.state.currentLevel + 1; // Increment level
-      GDM.state.diamondsCollected = 0; // Reset for next level
-
-      this.scene.scene.restart();
     });
   }
 }
