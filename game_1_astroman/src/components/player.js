@@ -16,7 +16,8 @@ export class Player {
       startingPoint.y - startingPoint.height,
       'astronaut-idle',
     );
-    this.player.setOffset(0, -3); // Adjust the offset as needed
+    this.player.body.setSize(15, 15); // Adjust the size as needed
+    this.player.body.setOffset(5, 5); // Adjust the offset as needed
     this.player.setCollideWorldBounds(true);
   }
 
