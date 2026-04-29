@@ -27,6 +27,7 @@ class GameOver extends Phaser.Scene {
 
     retryButton.on('pointerdown', () => {
       GDM.resetGame();
+      this.scene.stop('UIScene'); // Stop the UI scene to reset its state
       this.scene.start('GameScene');
     });
   }
