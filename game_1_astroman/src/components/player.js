@@ -64,7 +64,7 @@ export class Player {
       GDM.updateFuel(-1); // Decrease fuel
     } else if (this.player.body.blocked.down) {
       if (GDM.state.fuel < 100) {
-        GDM.updateFuel(10); // Regenerate fuel when on the ground
+        GDM.updateFuel(0.5); // Regenerate fuel when on the ground
       } // Ensure fuel doesn't go negative
     }
 
