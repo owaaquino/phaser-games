@@ -27,8 +27,6 @@ class GameScene extends Phaser.Scene {
     map.createLayer('background2', tileset, 0, 0);
     console.log(GDM.state);
 
-    const movingplatforms = map.createLayer('moving-platform', tileset, 0, 0);
-
     const frame = map.createLayer('framebound', tileset, 0, 0);
     const platforms = map.createLayer('platforms', tileset, 0, 0);
 
