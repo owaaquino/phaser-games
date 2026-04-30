@@ -12,6 +12,14 @@ export class Diamonds {
 
       obj.setOrigin(0, 1);
       obj.refreshBody();
+      this.scene.tweens.add({
+        targets: obj,
+        y: '+=5',
+        duration: 1000,
+        yoyo: true,
+        ease: 'Sine.easeInOut',
+        repeat: -1,
+      });
     });
   }
 }
