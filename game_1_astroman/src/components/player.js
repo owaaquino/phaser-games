@@ -16,15 +16,15 @@ export class Player {
       startingPoint.y - startingPoint.height,
       'astronaut-idle',
     );
+    this.player.body.setSize(15, 15); // Adjust the size as needed
+    this.player.body.setOffset(5, 5); // Adjust the offset as needed
     this.player.setCollideWorldBounds(true);
   }
 
   playerDeath() {
+    this.scene.physics.pause();
+    this.player.body.enable = false; // Disable physics to prevent further movement
     GDM.state.isDead = true;
-
-    this.scene.physics.world.pause();
-
-    this.player.anims.play('player-death', true);
 
     this.scene.tweens.add({
       targets: this.player,
@@ -63,7 +63,7 @@ export class Player {
       GDM.updateFuel(-1); // Decrease fuel
     } else if (this.player.body.blocked.down) {
       if (GDM.state.fuel < 100) {
-        GDM.updateFuel(10); // Regenerate fuel when on the ground
+        GDM.updateFuel(0.5); // Regenerate fuel when on the ground
       } // Ensure fuel doesn't go negative
     }
 

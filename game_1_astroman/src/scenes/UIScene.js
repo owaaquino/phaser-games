@@ -10,7 +10,7 @@ export default class UIScene extends Phaser.Scene {
     this.fuel = GDM.state.fuel;
 
     this.fuelText = this.add
-      .text(650,16, `Fuel: ${this.fuel}`, {
+      .text(650, 16, `Fuel: ${this.fuel}`, {
         fontSize: '24px',
         fill: '#fff',
       })
@@ -30,7 +30,11 @@ export default class UIScene extends Phaser.Scene {
 
     GDM.on('FUEL_CHANGED', (newFuel) => {
       this.fuel = newFuel;
-      this.fuelText.setText(`Fuel: ${this.fuel}`)
-    })
+      this.fuelText.setText(`Fuel: ${Math.trunc(this.fuel)}`);
+    });
+    this.events.on('shutdown', () => {
+      GDM.removeAllListeners('SCORE_CHANGED');
+      GDM.removeAllListeners('FUEL_CHANGED');
+    });
   }
 }

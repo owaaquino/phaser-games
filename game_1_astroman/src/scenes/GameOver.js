@@ -6,6 +6,8 @@ class GameOver extends Phaser.Scene {
   }
 
   create() {
+    this.scene.stop('UIScene'); // Stop the UI scene to prevent overlap
+
     this.add
       .text(400, 300, 'Game Over', {
         fontSize: '48px',

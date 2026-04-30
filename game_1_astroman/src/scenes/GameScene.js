@@ -25,9 +25,6 @@ class GameScene extends Phaser.Scene {
 
     map.createLayer('background1', tileset, 0, 0);
     map.createLayer('background2', tileset, 0, 0);
-    console.log(GDM.state);
-
-    const movingplatforms = map.createLayer('moving-platform', tileset, 0, 0);
 
     const frame = map.createLayer('framebound', tileset, 0, 0);
     const platforms = map.createLayer('platforms', tileset, 0, 0);
@@ -75,9 +72,8 @@ class GameScene extends Phaser.Scene {
       diamond.destroy(); // Remove the diamond from the game
     });
     this.physics.add.collider(this.player, this.enemies, () => {
-      GDM.state.isDead = true;
-
       playerInstance.playerDeath();
+      GDM.state.isDead = true;
     });
 
     const levelCompleteHandler = () => {
@@ -87,15 +83,15 @@ class GameScene extends Phaser.Scene {
 
     GDM.once('LEVEL_COMPLETE', levelCompleteHandler, this);
 
-    GDM.once('shutdown', () => {
+    this.events.once('shutdown', () => {
       GDM.off('LEVEL_COMPLETE', levelCompleteHandler, this);
     });
   }
 
   update() {
-    if (!GDM.state.isDead) {
-      this.playerController.update(this.cursors);
-    }
+    if (GDM.state.isDead) return;
+
+    this.playerController.update(this.cursors);
     this.enemyObjects.update();
   }
 }
