@@ -86,7 +86,7 @@ class GameScene extends Phaser.Scene {
 
     GDM.once('LEVEL_COMPLETE', levelCompleteHandler, this);
 
-    GDM.once('shutdown', () => {
+    this.events.once('shutdown', () => {
       GDM.off('LEVEL_COMPLETE', levelCompleteHandler, this);
     });
   }

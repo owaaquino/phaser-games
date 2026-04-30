@@ -32,5 +32,9 @@ export default class UIScene extends Phaser.Scene {
       this.fuel = newFuel;
       this.fuelText.setText(`Fuel: ${Math.trunc(this.fuel)}`);
     });
+    this.events.on('shutdown', () => {
+      GDM.removeAllListeners('SCORE_CHANGED');
+      GDM.removeAllListeners('FUEL_CHANGED');
+    });
   }
 }
