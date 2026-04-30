@@ -33,7 +33,6 @@ export class Player {
       duration: 1000,
       ease: 'Power2',
       onComplete: () => {
-        this.scene.scene.stop('UIScene'); // Stop the UI scene to prevent overlap
         this.scene.scene.start('GameOverScene');
       },
     });
