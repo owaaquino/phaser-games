@@ -26,6 +26,8 @@ export class Player {
     this.player.body.enable = false; // Disable physics to prevent further movement
     GDM.state.isDead = true;
 
+    this.player.anims.play('player-death');
+
     this.scene.tweens.add({
       targets: this.player,
       y: this.player.y - 10, // Jump up slightly
