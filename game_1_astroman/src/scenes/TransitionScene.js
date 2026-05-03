@@ -1,6 +1,7 @@
+import BaseMenuScene from '../BaseMenuScene.js';
 import GDM from '../GameManager.js';
 
-class TransitionScene extends Phaser.Scene {
+class TransitionScene extends BaseMenuScene {
   constructor() {
     super('TransitionScene');
   }
@@ -9,30 +10,23 @@ class TransitionScene extends Phaser.Scene {
     this.scene.stop('UIScene'); // Stop the UI scene to prevent overlap
 
     this.add
-      .text(400, 300, 'Stage Complete', {
+      .text(400, 300, 'Level Complete', {
         fontSize: '48px',
         fill: '#f5f5fa',
       })
       .setOrigin(0.5);
 
-    this.add
-      .text(400, 370, `Score: ${GDM.state.score}`, {
-        fontSize: '24px',
-        fill: '#fff',
-      })
-      .setOrigin(0.5);
+    this.initMenu(['Next Level', 'Main Menu']);
+  }
 
-    let nextLevelButton = this.add
-      .text(400, 450, `Go to Next Level ${GDM.state.currentLevel}`, {
-        fontSize: '24px',
-        fill: '#fff',
-      })
-      .setOrigin(0.5)
-      .setInteractive();
+  confirmSelection() {
+    const selectedOption = this.menuOptions[this.selectedIndex];
 
-    nextLevelButton.on('pointerdown', () => {
+    if (selectedOption === 'Next Level') {
       this.scene.start('GameScene');
-    });
+    } else if (selectedOption === 'Main Menu') {
+      console.log('Main menu ');
+    }
   }
 }
 

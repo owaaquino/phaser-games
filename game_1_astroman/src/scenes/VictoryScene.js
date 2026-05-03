@@ -1,6 +1,7 @@
+import BaseMenuScene from '../BaseMenuScene.js';
 import GDM from '../GameManager.js';
 
-class VictoryScene extends Phaser.Scene {
+class VictoryScene extends BaseMenuScene {
   constructor() {
     super('VictoryScene');
   }
@@ -22,15 +23,18 @@ class VictoryScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    let playAgainButton = this.add
-      .text(400, 450, 'PLAY AGAIN', { fontSize: '24px', fill: '#fff' })
-      .setOrigin(0.5)
-      .setInteractive();
+    this.initMenu(['Play Again', 'Main Menu']);
+  }
 
-    playAgainButton.on('pointerdown', () => {
+  confirmSelection() {
+    const selectedOption = this.menuOptions[this.selectedIndex];
+
+    if (selectedOption === 'Play Again') {
       GDM.resetGame();
       this.scene.start('GameScene');
-    });
+    } else if (selectedOption === 'Main Menu') {
+      console.log('Main menu ');
+    }
   }
 }
 

@@ -1,6 +1,7 @@
+import BaseMenuScene from '../BaseMenuScene.js';
 import GDM from '../GameManager.js';
 
-class GameOver extends Phaser.Scene {
+class GameOver extends BaseMenuScene {
   constructor() {
     super('GameOverScene');
   }
@@ -16,21 +17,24 @@ class GameOver extends Phaser.Scene {
       .setOrigin(0.5);
 
     this.add
-      .text(400, 370, `Final Score: ${GDM.state.score}`, {
+      .text(400, 340, `Final Score: ${GDM.state.score}`, {
         fontSize: '24px',
         fill: '#fff',
       })
       .setOrigin(0.5);
 
-    let retryButton = this.add
-      .text(400, 450, 'RETRY', { fontSize: '24px', fill: '#fff' })
-      .setOrigin(0.5)
-      .setInteractive();
+    this.initMenu(['Retry Level', 'Main Menu']);
+  }
 
-    retryButton.on('pointerdown', () => {
+  confirmSelection() {
+    const selectedOption = this.menuOptions[this.selectedIndex];
+
+    if (selectedOption === 'Retry Level') {
       GDM.resetGame();
       this.scene.start('GameScene');
-    });
+    } else if (selectedOption === 'Main Menu') {
+      console.log('Main menu ');
+    }
   }
 }
 
