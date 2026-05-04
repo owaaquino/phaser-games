@@ -77,6 +77,7 @@ class GameScene extends Phaser.Scene {
     });
 
     const levelCompleteHandler = () => {
+      GDM.state.scorecheckpoint = GDM.state.score;
       const transition = new transitionToNextLevel(this);
       transition.transition();
     };

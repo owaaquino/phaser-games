@@ -30,7 +30,7 @@ class GameOver extends BaseMenuScene {
     const selectedOption = this.menuOptions[this.selectedIndex];
 
     if (selectedOption === 'Retry Level') {
-      GDM.resetGame();
+      GDM.retryGame();
       this.scene.start('GameScene');
     } else if (selectedOption === 'Main Menu') {
       console.log('Main menu ');

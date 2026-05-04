@@ -4,6 +4,7 @@ class GameManager extends Phaser.Events.EventEmitter {
     if (!GameManager.instance) {
       this.state = {
         score: 0,
+        scorecheckpoint: 0,
         fuel: 100,
         isDead: false,
         currentLevel: 1, // starting level
@@ -52,6 +53,19 @@ class GameManager extends Phaser.Events.EventEmitter {
     this.state.currentLevel = 1;
 
     this.removeAllListeners(); // Clear all listeners to prevent duplicates on restart
+  }
+
+  saveCheckpoint() {
+    this.state.scorecheckpoint = this.state.score;
+  }
+
+  retryGame() {
+    this.state.fuel = 100;
+    this.state.score = this.state.scorecheckpoint;
+    this.state.isDead = false;
+    this.state.diamondsCollected = 0;
+
+    this.removeAllListeners();
   }
 }
 
