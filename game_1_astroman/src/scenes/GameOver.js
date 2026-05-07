@@ -33,7 +33,8 @@ class GameOver extends BaseMenuScene {
       GDM.retryGame();
       this.scene.start('GameScene');
     } else if (selectedOption === 'Main Menu') {
-      console.log('Main menu ');
+      GDM.resetGame();
+      this.scene.start('MenuScene');
     }
   }
 }

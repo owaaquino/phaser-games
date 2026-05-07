@@ -26,6 +26,7 @@
     <div id="game-container"></div>
     <script type="module">
       import Preload from './src/scenes/Preload.js';
+      import MenuScene from './src/scenes/MenuScene.js';
       import GameScene from './src/scenes/GameScene.js';
       import GameOver from './src/scenes/GameOver.js';
       import VictoryScene from './src/scenes/VictoryScene.js';
@@ -50,6 +51,7 @@
         },
         scene: [
           Preload,
+          MenuScene,
           UIScene,
           GameScene,
           GameOver,

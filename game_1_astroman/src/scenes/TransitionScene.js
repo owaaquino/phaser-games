@@ -25,7 +25,8 @@ class TransitionScene extends BaseMenuScene {
     if (selectedOption === 'Next Level') {
       this.scene.start('GameScene');
     } else if (selectedOption === 'Main Menu') {
-      console.log('Main menu ');
+      GDM.resetGame();
+      this.scene.start('MenuScene');
     }
   }
 }
