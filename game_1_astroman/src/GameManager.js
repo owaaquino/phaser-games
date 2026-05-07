@@ -50,6 +50,7 @@ class GameManager extends Phaser.Events.EventEmitter {
     this.emit('DIAMOND_COLLECTED', 0);
     this.state.diamondsCollected = 0;
     this.state.totalDiamonds = 0;
+    this.state.scorecheckpoint = 0;
     this.state.currentLevel = 1;
 
     this.removeAllListeners(); // Clear all listeners to prevent duplicates on restart
@@ -64,6 +65,7 @@ class GameManager extends Phaser.Events.EventEmitter {
     this.state.score = this.state.scorecheckpoint;
     this.state.isDead = false;
     this.state.diamondsCollected = 0;
+    this.state.totalDiamonds = 0;
 
     this.removeAllListeners();
   }
