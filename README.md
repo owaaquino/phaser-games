@@ -1,27 +1,11 @@
-# Astro Man - Platformer game
+## Building Games with Phaser
 
-My first game built with [Phaser](https://github.com/phaserjs/phaser)!
+This repository focuses on video games I created with Phaser this is part of my blog series with the same name "Building Games with Phaser" which you can find [here](https://owaaquino.com/tags/game-development).
 
-This is the official code repository for my [Building Games with Phaser](https://owaaquino.com/tags/game-development) blog series.
+### The Goal
 
-## Demo
+The goal of this repository is simple. Experiment with Phaser and create video games with it. But for my personal perspective, I want to rediscover my love in programing and learn more about OOP with JavaScript.
 
-You can play this game live [here]() in [itch.io]()
+### For your references
 
-## How to play
-
-| Keys                  | Description                    |
-| --------------------- | ------------------------------ |
-| Left and Right arrows | Moves the Player left or right |
-| Up Arrow              | Player jumps                   |
-| Space bar             | Player use it's jetpack        |
-
-## Credits
-
-| Assets            | Author      | Link                                                         |
-| ----------------- | ----------- | ------------------------------------------------------------ |
-| Space Runner Pack | mattwalkden | [https://mattwalkden.itch.io/](https://mattwalkden.itch.io/) |
-
-## Issues
-
-For any issues you encounter, please open a new [Github Issue](https://github.com/owaaquino/phaser-games/issues) on this project.
+Each folder / games in this repository have its own README.md file that you should check out, because there you can try it on your local environement. I'll be adding demo links as well when I able to publish the game in itch.io
