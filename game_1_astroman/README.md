@@ -6,7 +6,7 @@ This is the official code repository for my [Building Games with Phaser](https:/
 
 ## Demo
 
-You can play this game live [here]() in [itch.io]()
+You can play this game live [here](https://owaaquino.itch.io/astro-man) in [itch.io](https://itch.io/)
 
 ## How to play
 
@@ -15,6 +15,8 @@ You can play this game live [here]() in [itch.io]()
 | Left and Right arrows | Moves the Player left or right |
 | Up Arrow              | Player jumps                   |
 | Space bar             | Player use it's jetpack        |
+| Up and Down arrows    | Navigate the menu              |
+| Enter                 | Select item in menu            |
 
 ## Credits
 
