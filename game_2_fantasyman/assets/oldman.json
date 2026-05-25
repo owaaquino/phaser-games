@@ -1,0 +1,377 @@
+{
+	"textures": [
+		{
+			"image": "oldman.png?v=8326c59bb26f",
+			"format": "RGBA8888",
+			"size": {
+				"w": 109,
+				"h": 32
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "oldman_attack_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 14,
+						"h": 10
+					},
+					"frame": {
+						"x": 61,
+						"y": 13,
+						"w": 14,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_attack_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 12,
+						"h": 14
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 14
+					}
+				},
+				{
+					"filename": "oldman_attack_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 19,
+						"h": 13
+					},
+					"frame": {
+						"x": 1,
+						"y": 17,
+						"w": 19,
+						"h": 13
+					}
+				},
+				{
+					"filename": "oldman_attack_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 16,
+						"h": 10
+					},
+					"frame": {
+						"x": 43,
+						"y": 13,
+						"w": 16,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_attack_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 14,
+						"h": 10
+					},
+					"frame": {
+						"x": 61,
+						"y": 13,
+						"w": 14,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_attack_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 15,
+						"h": 10
+					},
+					"frame": {
+						"x": 58,
+						"y": 1,
+						"w": 15,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_attack_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 20,
+						"h": 10
+					},
+					"frame": {
+						"x": 15,
+						"y": 1,
+						"w": 20,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_attack_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 19,
+						"h": 10
+					},
+					"frame": {
+						"x": 22,
+						"y": 13,
+						"w": 19,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_attack_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 19,
+						"h": 10
+					},
+					"frame": {
+						"x": 37,
+						"y": 1,
+						"w": 19,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_idle_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 14,
+						"h": 10
+					},
+					"frame": {
+						"x": 61,
+						"y": 13,
+						"w": 14,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_idle_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 14,
+						"h": 9
+					},
+					"frame": {
+						"x": 77,
+						"y": 12,
+						"w": 14,
+						"h": 9
+					}
+				},
+				{
+					"filename": "oldman_idle_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 14,
+						"h": 8
+					},
+					"frame": {
+						"x": 94,
+						"y": 23,
+						"w": 14,
+						"h": 8
+					}
+				},
+				{
+					"filename": "oldman_idle_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 14,
+						"h": 9
+					},
+					"frame": {
+						"x": 92,
+						"y": 1,
+						"w": 14,
+						"h": 9
+					}
+				},
+				{
+					"filename": "oldman_run_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 14,
+						"h": 10
+					},
+					"frame": {
+						"x": 61,
+						"y": 13,
+						"w": 14,
+						"h": 10
+					}
+				},
+				{
+					"filename": "oldman_run_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 15,
+						"h": 9
+					},
+					"frame": {
+						"x": 75,
+						"y": 1,
+						"w": 15,
+						"h": 9
+					}
+				},
+				{
+					"filename": "oldman_run_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 15,
+						"h": 8
+					},
+					"frame": {
+						"x": 77,
+						"y": 23,
+						"w": 15,
+						"h": 8
+					}
+				},
+				{
+					"filename": "oldman_run_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 14,
+						"h": 9
+					},
+					"frame": {
+						"x": 93,
+						"y": 12,
+						"w": 14,
+						"h": 9
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:62af45044c34a5ab75770b140eaa7681:ec3a6fa0eee278b71fc4d5148b638f13:07e7abed1a805d90aa4bfd1170866032$"
+	}
+}

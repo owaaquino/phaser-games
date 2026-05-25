@@ -1,0 +1,503 @@
+{
+	"textures": [
+		{
+			"image": "dwarf.png?v=19acddba20f8",
+			"format": "RGBA8888",
+			"size": {
+				"w": 64,
+				"h": 69
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "dwarf_attack_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 12,
+						"h": 11
+					},
+					"frame": {
+						"x": 30,
+						"y": 1,
+						"w": 12,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 11,
+						"h": 14
+					},
+					"frame": {
+						"x": 27,
+						"y": 54,
+						"w": 11,
+						"h": 14
+					}
+				},
+				{
+					"filename": "dwarf_attack_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 17,
+						"h": 14
+					},
+					"frame": {
+						"x": 40,
+						"y": 54,
+						"w": 17,
+						"h": 14
+					}
+				},
+				{
+					"filename": "dwarf_attack_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 16,
+						"h": 11
+					},
+					"frame": {
+						"x": 44,
+						"y": 1,
+						"w": 16,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 12,
+						"h": 11
+					},
+					"frame": {
+						"x": 30,
+						"y": 1,
+						"w": 12,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 12,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 13,
+						"w": 12,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 10,
+						"h": 11
+					},
+					"frame": {
+						"x": 15,
+						"y": 13,
+						"w": 10,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 27,
+						"y": 14,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 15,
+						"h": 11
+					},
+					"frame": {
+						"x": 40,
+						"y": 14,
+						"w": 15,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 15,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 26,
+						"w": 15,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_attack_11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 13,
+						"h": 11
+					},
+					"frame": {
+						"x": 18,
+						"y": 27,
+						"w": 13,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_idle_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 12,
+						"h": 11
+					},
+					"frame": {
+						"x": 33,
+						"y": 27,
+						"w": 12,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_idle_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 6,
+						"w": 12,
+						"h": 10
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 10
+					}
+				},
+				{
+					"filename": "dwarf_idle_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 13,
+						"h": 10
+					},
+					"frame": {
+						"x": 15,
+						"y": 1,
+						"w": 13,
+						"h": 10
+					}
+				},
+				{
+					"filename": "dwarf_idle_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 6,
+						"w": 12,
+						"h": 10
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 12,
+						"h": 10
+					}
+				},
+				{
+					"filename": "dwarf_run_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 12,
+						"h": 11
+					},
+					"frame": {
+						"x": 47,
+						"y": 27,
+						"w": 12,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_run_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 12,
+						"h": 12
+					},
+					"frame": {
+						"x": 39,
+						"y": 40,
+						"w": 12,
+						"h": 12
+					}
+				},
+				{
+					"filename": "dwarf_run_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 4,
+						"w": 12,
+						"h": 12
+					},
+					"frame": {
+						"x": 13,
+						"y": 53,
+						"w": 12,
+						"h": 12
+					}
+				},
+				{
+					"filename": "dwarf_run_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 39,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_run_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 14,
+						"y": 40,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "dwarf_run_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 10,
+						"h": 12
+					},
+					"frame": {
+						"x": 53,
+						"y": 40,
+						"w": 10,
+						"h": 12
+					}
+				},
+				{
+					"filename": "dwarf_run_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 4,
+						"w": 10,
+						"h": 12
+					},
+					"frame": {
+						"x": 1,
+						"y": 52,
+						"w": 10,
+						"h": 12
+					}
+				},
+				{
+					"filename": "dwarf_run_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 18,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 10,
+						"h": 11
+					},
+					"frame": {
+						"x": 27,
+						"y": 40,
+						"w": 10,
+						"h": 11
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4c649c5e1214d143ff4e688db157fe06:893d2be258b67359cb5aa53d86569d54:ae9be247ca6c655757341fd41adef06a$"
+	}
+}
