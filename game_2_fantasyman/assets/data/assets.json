@@ -1,0 +1,44 @@
+[
+  {
+    "path": "assets/",
+    "files": [
+      {
+        "type": "atlas",
+        "key": "player",
+        "textureURL": "player.png",
+        "atlasURL": "player.json"
+      },
+      {
+        "type": "atlas",
+        "key": "items",
+        "textureURL": "items.png",
+        "atlasURL": "items.json"
+      }
+    ]
+  },
+  {
+    "path": "assets/tileset",
+    "files": [
+      {
+        "type": "image",
+        "key": "tileimage",
+        "url": "platformer.png"
+      }
+    ]
+  },
+  {
+    "path": "assets/levels/",
+    "files": [
+      {
+        "type": "tilemapTiledJSON",
+        "key": "intro_1",
+        "url": "intro_1.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "intro_2",
+        "url": "intro_2.json"
+      }
+    ]
+  }
+]
