@@ -1,0 +1,461 @@
+{
+	"textures": [
+		{
+			"image": "barbarian.png?v=59db90c30b0b",
+			"format": "RGBA8888",
+			"size": {
+				"w": 168,
+				"h": 32
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "barbarian_attack_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 14,
+						"h": 15
+					},
+					"frame": {
+						"x": 51,
+						"y": 1,
+						"w": 14,
+						"h": 15
+					}
+				},
+				{
+					"filename": "barbarian_attack_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 6,
+						"w": 17,
+						"h": 14
+					},
+					"frame": {
+						"x": 99,
+						"y": 1,
+						"w": 17,
+						"h": 14
+					}
+				},
+				{
+					"filename": "barbarian_attack_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 7,
+						"w": 16,
+						"h": 13
+					},
+					"frame": {
+						"x": 51,
+						"y": 18,
+						"w": 16,
+						"h": 13
+					}
+				},
+				{
+					"filename": "barbarian_attack_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 6,
+						"w": 14,
+						"h": 14
+					},
+					"frame": {
+						"x": 121,
+						"y": 17,
+						"w": 14,
+						"h": 14
+					}
+				},
+				{
+					"filename": "barbarian_attack_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 6,
+						"w": 17,
+						"h": 14
+					},
+					"frame": {
+						"x": 102,
+						"y": 17,
+						"w": 17,
+						"h": 14
+					}
+				},
+				{
+					"filename": "barbarian_attack_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 6,
+						"w": 17,
+						"h": 14
+					},
+					"frame": {
+						"x": 118,
+						"y": 1,
+						"w": 17,
+						"h": 14
+					}
+				},
+				{
+					"filename": "barbarian_attack_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 6,
+						"w": 14,
+						"h": 14
+					},
+					"frame": {
+						"x": 121,
+						"y": 17,
+						"w": 14,
+						"h": 14
+					}
+				},
+				{
+					"filename": "barbarian_attack_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 14,
+						"h": 15
+					},
+					"frame": {
+						"x": 51,
+						"y": 1,
+						"w": 14,
+						"h": 15
+					}
+				},
+				{
+					"filename": "barbarian_attack_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 14,
+						"h": 13
+					},
+					"frame": {
+						"x": 86,
+						"y": 18,
+						"w": 14,
+						"h": 13
+					}
+				},
+				{
+					"filename": "barbarian_attack_10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 13,
+						"h": 16
+					},
+					"frame": {
+						"x": 36,
+						"y": 1,
+						"w": 13,
+						"h": 16
+					}
+				},
+				{
+					"filename": "barbarian_attack_11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 17,
+						"h": 17
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 17,
+						"h": 17
+					}
+				},
+				{
+					"filename": "barbarian_attack_12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 10,
+						"w": 17,
+						"h": 10
+					},
+					"frame": {
+						"x": 1,
+						"y": 20,
+						"w": 17,
+						"h": 10
+					}
+				},
+				{
+					"filename": "barbarian_attack_13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 10,
+						"w": 15,
+						"h": 10
+					},
+					"frame": {
+						"x": 20,
+						"y": 19,
+						"w": 15,
+						"h": 10
+					}
+				},
+				{
+					"filename": "barbarian_idle_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 14,
+						"h": 15
+					},
+					"frame": {
+						"x": 51,
+						"y": 1,
+						"w": 14,
+						"h": 15
+					}
+				},
+				{
+					"filename": "barbarian_idle_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 14,
+						"h": 14
+					},
+					"frame": {
+						"x": 137,
+						"y": 1,
+						"w": 14,
+						"h": 14
+					}
+				},
+				{
+					"filename": "barbarian_idle_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 15,
+						"h": 13
+					},
+					"frame": {
+						"x": 69,
+						"y": 18,
+						"w": 15,
+						"h": 13
+					}
+				},
+				{
+					"filename": "barbarian_idle_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 14,
+						"h": 13
+					},
+					"frame": {
+						"x": 137,
+						"y": 17,
+						"w": 14,
+						"h": 13
+					}
+				},
+				{
+					"filename": "barbarian_run_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 14,
+						"h": 15
+					},
+					"frame": {
+						"x": 67,
+						"y": 1,
+						"w": 14,
+						"h": 15
+					}
+				},
+				{
+					"filename": "barbarian_run_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 14,
+						"h": 15
+					},
+					"frame": {
+						"x": 83,
+						"y": 1,
+						"w": 14,
+						"h": 15
+					}
+				},
+				{
+					"filename": "barbarian_run_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 14,
+						"h": 16
+					},
+					"frame": {
+						"x": 20,
+						"y": 1,
+						"w": 14,
+						"h": 16
+					}
+				},
+				{
+					"filename": "barbarian_run_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 20
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 14,
+						"h": 13
+					},
+					"frame": {
+						"x": 153,
+						"y": 1,
+						"w": 14,
+						"h": 13
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:cef2146529348102f1258a381cfd03af:f33fa88c8a32fd4a340705a16c702833:de36e9366bf61ddc251943afcdbbc9db$"
+	}
+}

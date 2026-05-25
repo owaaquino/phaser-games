@@ -1,0 +1,440 @@
+{
+	"textures": [
+		{
+			"image": "lizard.png?v=4eb1929038b8",
+			"format": "RGBA8888",
+			"size": {
+				"w": 30,
+				"h": 125
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "lizard_attack_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 75,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "lizard_attack_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 10,
+						"h": 11
+					},
+					"frame": {
+						"x": 14,
+						"y": 53,
+						"w": 10,
+						"h": 11
+					}
+				},
+				{
+					"filename": "lizard_attack_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 21,
+						"h": 10
+					},
+					"frame": {
+						"x": 1,
+						"y": 13,
+						"w": 21,
+						"h": 10
+					}
+				},
+				{
+					"filename": "lizard_attack_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 22,
+						"h": 10
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 22,
+						"h": 10
+					}
+				},
+				{
+					"filename": "lizard_attack_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 88,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "lizard_attack_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 101,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "lizard_attack_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 75,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "lizard_attack_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 6,
+						"w": 10,
+						"h": 10
+					},
+					"frame": {
+						"x": 14,
+						"y": 66,
+						"w": 10,
+						"h": 10
+					}
+				},
+				{
+					"filename": "lizard_attack_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 7,
+						"w": 16,
+						"h": 9
+					},
+					"frame": {
+						"x": 1,
+						"y": 25,
+						"w": 16,
+						"h": 9
+					}
+				},
+				{
+					"filename": "lizard_attack_10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 7,
+						"w": 16,
+						"h": 9
+					},
+					"frame": {
+						"x": 1,
+						"y": 36,
+						"w": 16,
+						"h": 9
+					}
+				},
+				{
+					"filename": "lizard_attack_11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 6,
+						"w": 10,
+						"h": 10
+					},
+					"frame": {
+						"x": 14,
+						"y": 78,
+						"w": 10,
+						"h": 10
+					}
+				},
+				{
+					"filename": "lizard_attack_12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 22,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 12,
+						"h": 10
+					},
+					"frame": {
+						"x": 1,
+						"y": 114,
+						"w": 12,
+						"h": 10
+					}
+				},
+				{
+					"filename": "lizard_idle_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 11,
+						"h": 12
+					},
+					"frame": {
+						"x": 1,
+						"y": 47,
+						"w": 11,
+						"h": 12
+					}
+				},
+				{
+					"filename": "lizard_idle_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 1,
+						"y": 75,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "lizard_idle_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 12,
+						"h": 9
+					},
+					"frame": {
+						"x": 15,
+						"y": 114,
+						"w": 12,
+						"h": 9
+					}
+				},
+				{
+					"filename": "lizard_idle_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 11,
+						"h": 10
+					},
+					"frame": {
+						"x": 14,
+						"y": 90,
+						"w": 11,
+						"h": 10
+					}
+				},
+				{
+					"filename": "lizard_run_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 10,
+						"h": 12
+					},
+					"frame": {
+						"x": 19,
+						"y": 25,
+						"w": 10,
+						"h": 12
+					}
+				},
+				{
+					"filename": "lizard_run_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 11,
+						"h": 12
+					},
+					"frame": {
+						"x": 1,
+						"y": 61,
+						"w": 11,
+						"h": 12
+					}
+				},
+				{
+					"filename": "lizard_run_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 10,
+						"h": 12
+					},
+					"frame": {
+						"x": 19,
+						"y": 39,
+						"w": 10,
+						"h": 12
+					}
+				},
+				{
+					"filename": "lizard_run_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 10,
+						"h": 10
+					},
+					"frame": {
+						"x": 14,
+						"y": 102,
+						"w": 10,
+						"h": 10
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:fd55684e3a5078a83283202fb13da795:d16479b5e332cb713e05dbd3ee143455:3d60b3d24c8a6c98f2f50be7cc542ed6$"
+	}
+}
