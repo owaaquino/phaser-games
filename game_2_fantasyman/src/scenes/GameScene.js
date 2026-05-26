@@ -1,3 +1,5 @@
+import { Player } from '../components/player.js';
+
 class GameScene extends Phaser.Scene {
   constructor() {
     super('GameScene');
@@ -7,39 +9,40 @@ class GameScene extends Phaser.Scene {
     const map = this.make.tilemap({ key: 'intro_1' });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
+    console.log(map);
+
     map.createLayer('background', tileset);
     map.createLayer('decorations', tileset);
 
     map.createLayer('ladders', tileset);
     map.createLayer('spikes', tileset);
+    map.createLayer('doors', tileset);
 
-    // const frame = map.createLayer('framebound', tileset, 0, 0);
     const platforms = map.createLayer('platforms', tileset, 0, 0);
-
-    this.player = this.physics.add.sprite(
-      100,
-      10,
-      'player',
-      'basic_idle_01.png',
-    );
-    // this.player.setCollideworldbounds(true);
-
-    platforms.setCollisionByProperty({ collides: true });
-    this.physics.add.collider(this.player, platforms);
-    //
-    // 2. Set the physics boundaries to the exact size of your Tiled map
-    // This stops the player from walking off the left/right edges of your massive level
     this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
-    // 3. Set the camera boundaries to the exact size of your Tiled map
-    // This stops the camera from showing the empty black void past the edges of your map
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    // Create input keys
+    this.cursor = this.input.keyboard.createCursorKeys();
 
-    // 4. Tell the camera to track your player
-    // True = rounds pixels to prevent jitter in your 8x8 game!
+    // Create Player
+
+    const playerInstance = new Player(this);
+    playerInstance.createPlayer(map);
+    this.player = playerInstance.player;
+    this.playerController = playerInstance;
+
+    // Set up collisions
+    platforms.setCollisionByProperty({ collides: true });
+    this.physics.add.collider(this.player, platforms);
+
+    // Camera setup
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+    this.cameras.main.setZoom(1);
   }
-  update() {}
+  update() {
+    this.playerController.update(this.cursor);
+  }
 }
 
 export default GameScene;
