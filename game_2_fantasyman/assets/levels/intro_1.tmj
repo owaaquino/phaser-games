@@ -7,7 +7,7 @@
          "target":"intro_1.json"
         }
     },
- "height":19,
+ "height":20,
  "infinite":true,
  "layers":[
         {
@@ -196,7 +196,7 @@
          "starty":0,
          "type":"tilelayer",
          "visible":true,
-         "width":80,
+         "width":64,
          "x":0,
          "y":0
         }, 
@@ -1006,5 +1006,5 @@
  "tilewidth":8,
  "type":"map",
  "version":"1.10",
- "width":25
+ "width":64
 }
