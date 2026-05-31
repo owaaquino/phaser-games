@@ -5,8 +5,7 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
-    console.log('GameScene: create method called');
-    const map = this.make.tilemap({ key: 'intro_1' });
+    const map = this.make.tilemap({ key: 'intro_2' });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
     console.log(map);
@@ -28,7 +27,6 @@ class GameScene extends Phaser.Scene {
 
     if (ladderObject) {
       ladderObject.forEach((ladder) => {
-        console.log('Ladder object:', ladder);
         const zone = this.add
           .zone(
             Math.round(ladder.x),
