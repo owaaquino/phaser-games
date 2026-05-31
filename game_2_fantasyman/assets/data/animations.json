@@ -44,6 +44,16 @@
         { "key": "player", "frame": "basic_jump_08.png" },
         { "key": "player", "frame": "basic_jump_09.png" }
       ]
+    },
+    {
+      "key": "climb",
+      "type": "frame",
+      "frameRate": 4,
+      "repeat": 0,
+      "frames": [
+        { "key": "player", "frame": "basic_climb_01.png" },
+        { "key": "player", "frame": "basic_climb_02.png" }
+      ]
     }
   ]
 }

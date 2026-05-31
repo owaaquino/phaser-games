@@ -13,22 +13,27 @@ export class Player {
       'basic_idle_01.png',
     );
     this.player.setCollideWorldBounds(true);
-    this.player.setSize(5, 5);
-    this.player.setOffset(6);
+    this.player.setSize(5, 8);
+    this.player.setOffset(5, 6);
   }
 
-  update(cursor, isClimbing = false) {
+  update(cursor, isClimbing) {
     if (isClimbing) {
+      this.player.setVelocityX(0);
       this.player.setAccelerationY(0);
-      this.player.body.setAllowGravity(false);
 
-      if (cursor.left.isDown) {
-        this.player.setVelocityX(-60);
-      } else if (cursor.right.isDown) {
-        this.player.setVelocityX(60);
+      if (cursor.up.isDown) {
+        this.player.setVelocityY(-80);
+      } else if (cursor.down.isDown) {
+        this.player.setVelocityY(80);
       } else {
-        this.player.setVelocityX(0);
+        this.player.setVelocityY(0);
       }
+
+      if (cursor.up.down || cursor.down.isDown) {
+        this.player.anims.play('climb', true);
+      }
+
       return;
     }
 
@@ -44,12 +49,12 @@ export class Player {
 
     if (
       Phaser.Input.Keyboard.JustDown(cursor.space) &&
-      this.player.body.blocked.down
+      (this.player.body.blocked.down || this.player.body.touching.down)
     ) {
       this.player.setVelocityY(-90);
     }
 
-    if (!this.player.body.blocked.down) {
+    if (!(this.player.body.blocked.down || this.player.body.touching.down)) {
       this.player.anims.play('jump', true);
     } else if (this.player.body.velocity.x !== 0) {
       this.player.anims.play('walk', true);
