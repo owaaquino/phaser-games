@@ -43,6 +43,9 @@ class GameScene extends Phaser.Scene {
 
     // Create input keys
     this.cursor = this.input.keyboard.createCursorKeys();
+    this.cursor.keyZ = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.Z,
+    );
 
     // Create Player
 
@@ -74,6 +77,7 @@ class GameScene extends Phaser.Scene {
   update() {
     const touchingLadder = this.physics.overlap(this.player, this.ladderObject);
     const pressingLeave = this.cursor.left.isDown || this.cursor.right.isDown;
+
     this.isClimbing = touchingLadder && !pressingLeave;
 
     if (this.isClimbing) {
@@ -84,20 +88,6 @@ class GameScene extends Phaser.Scene {
     }
 
     this.playerController.update(this.cursor, this.isClimbing);
-  }
-
-  canClimb(player, ladder) {
-    if (
-      player.body.left >= ladder.body.left &&
-      player.body.right <= ladder.body.right &&
-      ((this.cursor.up.isDown &&
-        player.body.bottom - player.body.deltaY() > ladder.body.top) ||
-        this.cursor.down.isDown)
-    ) {
-      console.log('Player can climb the ladder');
-      return true;
-    }
-    return false;
   }
 
   onLadderTop(player, ladder) {

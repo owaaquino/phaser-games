@@ -19,21 +19,15 @@ export class Player {
 
   update(cursor, isClimbing) {
     if (isClimbing) {
-      this.player.setVelocityX(0);
-      this.player.setAccelerationY(0);
-
       if (cursor.up.isDown) {
         this.player.setVelocityY(-80);
+        this.player.anims.play('climb', true);
       } else if (cursor.down.isDown) {
         this.player.setVelocityY(80);
+        this.player.anims.play('climb', true);
       } else {
         this.player.setVelocityY(0);
       }
-
-      if (cursor.up.down || cursor.down.isDown) {
-        this.player.anims.play('climb', true);
-      }
-
       return;
     }
 
@@ -52,6 +46,18 @@ export class Player {
       (this.player.body.blocked.down || this.player.body.touching.down)
     ) {
       this.player.setVelocityY(-90);
+    }
+
+    if (Phaser.Input.Keyboard.JustDown(cursor.keyZ)) {
+      this.player.anims.play('basic-attack', true);
+    }
+
+    if (
+      this.player.anims.currentAnim &&
+      this.player.anims.currentAnim.key === 'basic-attack' &&
+      this.player.anims.isPlaying
+    ) {
+      return;
     }
 
     if (!(this.player.body.blocked.down || this.player.body.touching.down)) {
