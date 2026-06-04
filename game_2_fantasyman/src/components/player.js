@@ -1,6 +1,7 @@
 export class Player {
   constructor(scene) {
     this.scene = scene;
+    this.isAttacking = false;
   }
 
   createPlayer(map) {
@@ -15,9 +16,55 @@ export class Player {
     this.player.setCollideWorldBounds(true);
     this.player.setSize(5, 8);
     this.player.setOffset(5, 6);
+
+    // create invisible hitbox for attacks
+    this.attackZone = this.scene.add.zone(0, 0, 8, 8);
+    this.scene.physics.add.existing(this.attackZone);
+    this.attackZone.body.setAllowGravity(false);
+    this.attackZone.body.debugShowBody = true;
+    this.attackZone.body.enable = false;
+    this.attackZone.setVisible(false);
+  }
+
+  playerAttack() {
+    if (this.isAttacking) return;
+
+    this.isAttacking = true;
+    this.player.anims.play('basic-attack', true);
+
+    this.player.setVelocityX(0);
+
+    const offsetX = this.player.flipX ? -6 : 6;
+
+    this.attackZone.x = this.player.x + offsetX;
+    this.attackZone.y = this.player.y;
+
+    this.attackZone.body.enable = true;
+
+    this.scene.time.delayedCall(150, () => {
+      this.attackZone.body.enable = false;
+      this.attackZone.setVisible(false);
+      this.isAttacking = false;
+    });
   }
 
   update(cursor, isClimbing) {
+    if (Phaser.Input.Keyboard.JustDown(cursor.keyZ)) {
+      this.playerAttack();
+    }
+
+    if (
+      this.isAttacking ||
+      (this.player.anims.currentAnim &&
+        this.player.anims.currentAnim.key === 'basic-attack' &&
+        this.player.anims.isPlaying)
+    ) {
+      if (this.player.body.blocked.down || this.player.body.touching.down) {
+        this.player.setVelocityX(0);
+      }
+      return;
+    }
+
     if (isClimbing) {
       if (cursor.up.isDown) {
         this.player.setVelocityY(-80);
@@ -49,15 +96,7 @@ export class Player {
     }
 
     if (Phaser.Input.Keyboard.JustDown(cursor.keyZ)) {
-      this.player.anims.play('basic-attack', true);
-    }
-
-    if (
-      this.player.anims.currentAnim &&
-      this.player.anims.currentAnim.key === 'basic-attack' &&
-      this.player.anims.isPlaying
-    ) {
-      return;
+      this.playerAttack();
     }
 
     if (!(this.player.body.blocked.down || this.player.body.touching.down)) {

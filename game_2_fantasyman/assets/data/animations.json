@@ -64,13 +64,7 @@
         { "key": "player", "frame": "basic_sword_attack_01.png" },
         { "key": "player", "frame": "basic_sword_attack_02.png" },
         { "key": "player", "frame": "basic_sword_attack_03.png" },
-        { "key": "player", "frame": "basic_sword_attack_04.png" },
-        { "key": "player", "frame": "basic_sword_attack_05.png" },
-        { "key": "player", "frame": "basic_sword_attack_06.png" },
-        { "key": "player", "frame": "basic_sword_attack_07.png" },
-        { "key": "player", "frame": "basic_sword_attack_08.png" },
-        { "key": "player", "frame": "basic_sword_attack_09.png" },
-        { "key": "player", "frame": "basic_sword_attack_10.png" }
+        { "key": "player", "frame": "basic_sword_attack_04.png" }
       ]
     }
   ]
