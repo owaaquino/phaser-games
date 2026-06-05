@@ -17,6 +17,8 @@ export class Player {
     this.player.setSize(5, 8);
     this.player.setOffset(5, 6);
 
+    this.player.body.onWorldBounds = true;
+
     // create invisible hitbox for attacks
     this.attackZone = this.scene.add.zone(0, 0, 8, 8);
     this.scene.physics.add.existing(this.attackZone);
@@ -24,6 +26,14 @@ export class Player {
     this.attackZone.body.debugShowBody = true;
     this.attackZone.body.enable = false;
     this.attackZone.setVisible(false);
+  }
+
+  handlePlayerDeath() {
+    this.scene.cameras.main.shake(500, 0.01);
+    this.scene.cameras.main.fade(500, 0, 0, 0);
+    this.scene.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.scene.restart();
+    });
   }
 
   playerAttack() {

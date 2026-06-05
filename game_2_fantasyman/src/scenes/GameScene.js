@@ -66,6 +66,15 @@ class GameScene extends Phaser.Scene {
       this,
     );
 
+    this.physics.world.on('worldbounds', (body) => {
+      if (body.gameObject === this.player && body.blocked.down) {
+        console.log('Player has hit the world bounds');
+        playerInstance.handlePlayerDeath();
+      }
+    });
+
+    // initialize climbing state
+
     this.isClimbing = false;
 
     // Camera setup
