@@ -709,7 +709,7 @@
             "fontfamily": "Arial",
             "halign": "center",
             "pixelsize": 8,
-            "text": "ARROW KEYS TO MOVE AROUND"
+            "text": "ARROW KEYS TO MOVE"
           },
           "type": "",
           "visible": true,
@@ -727,7 +727,7 @@
             "fontfamily": "Arial",
             "halign": "center",
             "pixelsize": 8,
-            "text": "[ SPACE BAR ] TO JUMP"
+            "text": "<SPACE> TO JUMP"
           },
           "type": "",
           "visible": true,

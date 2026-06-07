@@ -24,6 +24,7 @@ class Preload extends Phaser.Scene {
     // 3. Load assets
     this.load.pack('asset_pack', 'assets/data/assets.json');
     this.load.json('animations_json', 'assets/data/animations.json');
+    this.load.image('bubble_font', 'assets/fonts/bubblemad_8x8.png');
   }
 
   create() {
