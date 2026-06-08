@@ -1,5 +1,6 @@
 import { Player } from '../components/player.js';
 import { Keys } from '../components/key.js';
+import { Door } from '../components/door.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -80,6 +81,11 @@ class GameScene extends Phaser.Scene {
     keysInstance.createKeys(map);
     this.keys = keysInstance.keys;
 
+    //Create Door
+    const doorInstance = new Door(this);
+    doorInstance.createDoor(map);
+    this.doorObject = doorInstance.doorObject;
+
     // Create Player
     const playerInstance = new Player(this);
     playerInstance.createPlayer(map);
@@ -92,6 +98,11 @@ class GameScene extends Phaser.Scene {
     this.physics.add.overlap(this.player, this.keys, (player, key) => {
       this.doorOpened = true;
       key.disableBody(true, true);
+    });
+    this.physics.add.overlap(this.player, this.doorObject, (player, door) => {
+      if (this.doorOpened) {
+        console.log('Level Complete!');
+      }
     });
 
     this.physics.add.collider(
