@@ -1,11 +1,12 @@
 import { Player } from '../components/player.js';
+import { Keys } from '../components/key.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
     super('GameScene');
   }
   create() {
-    const map = this.make.tilemap({ key: 'intro_2' });
+    const map = this.make.tilemap({ key: 'intro_1' });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
     console.log(map);
@@ -72,8 +73,14 @@ class GameScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.Z,
     );
 
-    // Create Player
+    this.doorOpened = false;
 
+    // Create Keys
+    const keysInstance = new Keys(this);
+    keysInstance.createKeys(map);
+    this.keys = keysInstance.keys;
+
+    // Create Player
     const playerInstance = new Player(this);
     playerInstance.createPlayer(map);
     this.player = playerInstance.player;
@@ -82,6 +89,10 @@ class GameScene extends Phaser.Scene {
     // Set up collisions
     platforms.setCollisionByProperty({ collides: true });
     this.platformCollider = this.physics.add.collider(this.player, platforms);
+    this.physics.add.overlap(this.player, this.keys, (player, key) => {
+      this.doorOpened = true;
+      key.disableBody(true, true);
+    });
 
     this.physics.add.collider(
       this.player,

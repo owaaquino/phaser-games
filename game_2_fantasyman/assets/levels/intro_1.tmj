@@ -797,7 +797,7 @@
                      "fontfamily":"Arial",
                      "halign":"center",
                      "pixelsize":8,
-                     "text":"COLLECT KEYS TO OPEN DOORS"
+                     "text":"COLLECT KEY TO OPEN DOOR"
                     },
                  "type":"",
                  "visible":true,
