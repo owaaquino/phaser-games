@@ -8,6 +8,15 @@ export class Door {
     this.doorObject = this.scene.physics.add.staticGroup();
     if (doorObject) {
       doorObject.forEach((door) => {
+        // door sprite
+        const doorVisual = this.scene.add.sprite(
+          door.x,
+          door.y + door.height,
+          'door',
+          'door-closed.png',
+        );
+        doorVisual.setOrigin(0, 1);
+
         const zone = this.scene.add
           .zone(
             Math.round(door.x),
@@ -19,6 +28,8 @@ export class Door {
         this.scene.physics.add.existing(zone, true);
         zone.body.debugShowBody = true;
         this.doorObject.add(zone);
+
+        zone.setData('visual', doorVisual);
       });
     }
   }

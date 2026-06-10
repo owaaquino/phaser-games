@@ -7,7 +7,7 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
-    const map = this.make.tilemap({ key: 'intro_1' });
+    const map = this.make.tilemap({ key: 'intro_2' });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
     console.log(map);
@@ -93,18 +93,26 @@ class GameScene extends Phaser.Scene {
     this.playerController = playerInstance;
 
     // Set up collisions
+
+    // platform and player
     platforms.setCollisionByProperty({ collides: true });
     this.platformCollider = this.physics.add.collider(this.player, platforms);
+    // door and player
     this.physics.add.overlap(this.player, this.keys, (player, key) => {
       this.doorOpened = true;
+      const doorZone = this.doorObject.getChildren()[0];
+      const doorSprite = doorZone.getData('visual');
+      doorSprite.anims.play('door-open');
+
       key.disableBody(true, true);
     });
+    // key and player
     this.physics.add.overlap(this.player, this.doorObject, (player, door) => {
       if (this.doorOpened) {
         console.log('Level Complete!');
       }
     });
-
+    // ladder and player
     this.physics.add.collider(
       this.player,
       this.ladderObject,
@@ -121,7 +129,6 @@ class GameScene extends Phaser.Scene {
     });
 
     // initialize climbing state
-
     this.isClimbing = false;
 
     // Camera setup
