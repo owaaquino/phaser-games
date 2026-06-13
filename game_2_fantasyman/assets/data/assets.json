@@ -13,6 +13,12 @@
         "key": "items",
         "textureURL": "items.png",
         "atlasURL": "items.json"
+      },
+      {
+        "type": "atlas",
+        "key": "door",
+        "textureURL": "door.png",
+        "atlasURL": "door.json"
       }
     ]
   },

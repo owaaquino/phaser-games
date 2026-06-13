@@ -66,6 +66,16 @@
         { "key": "player", "frame": "basic_sword_attack_03.png" },
         { "key": "player", "frame": "basic_sword_attack_04.png" }
       ]
+    },
+    {
+      "key": "door-open",
+      "type": "frame",
+      "frameRate": 10,
+      "repeat": 0,
+      "frames": [
+        { "key": "door", "frame": "door-closed.png" },
+        { "key": "door", "frame": "door-open.png" }
+      ]
     }
   ]
 }

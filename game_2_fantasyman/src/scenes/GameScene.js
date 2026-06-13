@@ -1,4 +1,6 @@
 import { Player } from '../components/player.js';
+import { Keys } from '../components/key.js';
+import { Door } from '../components/door.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -72,17 +74,45 @@ class GameScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.Z,
     );
 
-    // Create Player
+    this.doorOpened = false;
 
+    // Create Keys
+    const keysInstance = new Keys(this);
+    keysInstance.createKeys(map);
+    this.keys = keysInstance.keys;
+
+    //Create Door
+    const doorInstance = new Door(this);
+    doorInstance.createDoor(map);
+    this.doorObject = doorInstance.doorObject;
+
+    // Create Player
     const playerInstance = new Player(this);
     playerInstance.createPlayer(map);
     this.player = playerInstance.player;
     this.playerController = playerInstance;
 
     // Set up collisions
+
+    // platform and player
     platforms.setCollisionByProperty({ collides: true });
     this.platformCollider = this.physics.add.collider(this.player, platforms);
+    // door and player
+    this.physics.add.overlap(this.player, this.keys, (player, key) => {
+      this.doorOpened = true;
+      const doorZone = this.doorObject.getChildren()[0];
+      const doorSprite = doorZone.getData('visual');
+      doorSprite.anims.play('door-open');
 
+      key.disableBody(true, true);
+    });
+    // key and player
+    this.physics.add.overlap(this.player, this.doorObject, (player, door) => {
+      if (this.doorOpened) {
+        console.log('Level Complete!');
+      }
+    });
+    // ladder and player
     this.physics.add.collider(
       this.player,
       this.ladderObject,
@@ -99,7 +129,6 @@ class GameScene extends Phaser.Scene {
     });
 
     // initialize climbing state
-
     this.isClimbing = false;
 
     // Camera setup
