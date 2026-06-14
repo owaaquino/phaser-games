@@ -7,16 +7,14 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
-    const map = this.make.tilemap({ key: 'intro_2' });
+    const map = this.make.tilemap({ key: 'intro_1' });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
-
-    console.log(map);
 
     map.createLayer('background', tileset);
     map.createLayer('decorations', tileset);
 
     map.createLayer('ladders', tileset);
-    map.createLayer('spikes', tileset);
+    const spikes = map.createLayer('spikes', tileset);
     map.createLayer('doors', tileset);
 
     const platforms = map.createLayer('platforms', tileset, 0, 0);
@@ -97,6 +95,7 @@ class GameScene extends Phaser.Scene {
     // platform and player
     platforms.setCollisionByProperty({ collides: true });
     this.platformCollider = this.physics.add.collider(this.player, platforms);
+
     // door and player
     this.physics.add.overlap(this.player, this.keys, (player, key) => {
       this.doorOpened = true;
@@ -120,6 +119,20 @@ class GameScene extends Phaser.Scene {
       this.onLadderTop,
       this,
     );
+
+    // player and spikes
+    spikes.setCollisionByProperty({ collides: true });
+    spikes.forEachTile((tile) => {
+      if (tile.properties.collides) {
+        tile.setCollision(false, false, false, false);
+      }
+    });
+
+    this.physics.add.overlap(this.player, spikes, (player, tile) => {
+      if (tile.index === -1) return; // Skip if no tile is present
+      console.log('Player hit spikes');
+      playerInstance.handlePlayerDeath();
+    });
 
     this.physics.world.on('worldbounds', (body) => {
       if (body.gameObject === this.player && body.blocked.down) {
