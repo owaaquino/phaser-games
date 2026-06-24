@@ -1,6 +1,7 @@
 import { Player } from '../components/player.js';
 import { Keys } from '../components/key.js';
 import { Door } from '../components/door.js';
+import { Enemies } from '../components/enemies.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -20,6 +21,10 @@ class GameScene extends Phaser.Scene {
     const platforms = map.createLayer('platforms', tileset, 0, 0);
 
     this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+    const lizardLayer = map.getObjectLayer('lizards');
+
+    console.log(lizardLayer);
 
     // Get texts object
     //TODO - maybe I can refactor this to separate utility function
@@ -90,11 +95,24 @@ class GameScene extends Phaser.Scene {
     this.player = playerInstance.player;
     this.playerController = playerInstance;
 
+    // Create Enemeis
+
+    this.enemies = this.physics.add.group();
+    this.enemyObjects = null;
+
+    if (lizardLayer && lizardLayer.objects) {
+      const enemiesInstance = new Enemies(this);
+      enemiesInstance.createEnemies(map);
+      this.enemies = enemiesInstance.enemyObjects;
+      this.enemyObjects = enemiesInstance;
+    }
     // Set up collisions
 
     // platform and player
     platforms.setCollisionByProperty({ collides: true });
     this.platformCollider = this.physics.add.collider(this.player, platforms);
+    // platform and enemies
+    this.physics.add.collider(this.enemies, platforms);
 
     // door and player
     this.physics.add.overlap(this.player, this.keys, (player, key) => {
@@ -164,6 +182,12 @@ class GameScene extends Phaser.Scene {
     }
 
     this.playerController.update(this.cursor, this.isClimbing);
+
+    if (!this.enemyObjects) {
+      return;
+    } else {
+      this.enemyObjects.update();
+    }
   }
 
   onLadderTop(player, ladder) {

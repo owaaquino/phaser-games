@@ -76,6 +76,18 @@
         { "key": "door", "frame": "door-closed.png" },
         { "key": "door", "frame": "door-open.png" }
       ]
+    },
+    {
+      "key": "lizard-idle",
+      "type": "frame",
+      "frameRate": 10,
+      "repeat": -1,
+      "frames": [
+        { "key": "lizard", "frame": "lizard_idle_01.png" },
+        { "key": "lizard", "frame": "lizard_idle_02.png" },
+        { "key": "lizard", "frame": "lizard_idle_03.png" },
+        { "key": "lizard", "frame": "lizard_idle_04.png" }
+      ]
     }
   ]
 }

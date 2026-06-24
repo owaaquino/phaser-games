@@ -10,6 +10,12 @@
       },
       {
         "type": "atlas",
+        "key": "lizard",
+        "textureURL": "lizard.png",
+        "atlasURL": "lizard.json"
+      },
+      {
+        "type": "atlas",
         "key": "items",
         "textureURL": "items.png",
         "atlasURL": "items.json"
