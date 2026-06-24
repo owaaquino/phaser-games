@@ -15,7 +15,7 @@ export class Player {
     );
     this.player.setCollideWorldBounds(true);
     this.player.setSize(5, 8);
-    this.player.setOffset(5, 6);
+    this.player.setOffset(5);
 
     this.player.body.onWorldBounds = true;
 
