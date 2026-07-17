@@ -20,7 +20,7 @@ export class Player {
     this.player.body.onWorldBounds = true;
 
     // create invisible hitbox for attacks
-    this.attackZone = this.scene.add.zone(0, 0, 8, 8);
+    this.attackZone = this.scene.add.zone(0, 0, 4, 8);
     this.scene.physics.add.existing(this.attackZone);
     this.attackZone.body.setAllowGravity(false);
     this.attackZone.body.debugShowBody = true;
