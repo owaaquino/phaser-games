@@ -44,10 +44,11 @@ export class Player {
 
     this.player.setVelocityX(0);
 
-    const offsetX = this.player.flipX ? -6 : 6;
+    const bodyCenterX = this.player.body.center.x;
+    const bodyCenterY = this.player.body.center.y;
+    const attackOffsetX = this.player.flipX ? -8 : 8;
 
-    this.attackZone.x = this.player.x + offsetX;
-    this.attackZone.y = this.player.y;
+    this.attackZone.setPosition(bodyCenterX + attackOffsetX, bodyCenterY);
 
     this.attackZone.body.enable = true;
 
