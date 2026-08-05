@@ -16,6 +16,12 @@
       },
       {
         "type": "atlas",
+        "key": "barbarian",
+        "textureURL": "barbarian.png",
+        "atlasURL": "barbarian.json"
+      },
+      {
+        "type": "atlas",
         "key": "items",
         "textureURL": "items.png",
         "atlasURL": "items.json"

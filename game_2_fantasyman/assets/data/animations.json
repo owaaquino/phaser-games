@@ -95,18 +95,16 @@
       "frameRate": 10,
       "repeat": 0,
       "frames": [
-        { "key": "lizard", "frame": "lizard_attack_01.png" },
-        { "key": "lizard", "frame": "lizard_attack_02.png" },
-        { "key": "lizard", "frame": "lizard_attack_03.png" },
-        { "key": "lizard", "frame": "lizard_attack_04.png" },
-        { "key": "lizard", "frame": "lizard_attack_05.png" },
-        { "key": "lizard", "frame": "lizard_attack_06.png" },
         { "key": "lizard", "frame": "lizard_attack_07.png" },
         { "key": "lizard", "frame": "lizard_attack_08.png" },
         { "key": "lizard", "frame": "lizard_attack_09.png" },
         { "key": "lizard", "frame": "lizard_attack_10.png" },
         { "key": "lizard", "frame": "lizard_attack_11.png" },
-        { "key": "lizard", "frame": "lizard_attack_12.png" }
+        { "key": "lizard", "frame": "lizard_attack_12.png" },
+        { "key": "lizard", "frame": "lizard_attack_13.png" },
+        { "key": "lizard", "frame": "lizard_attack_14.png" },
+        { "key": "lizard", "frame": "lizard_attack_15.png" },
+        { "key": "lizard", "frame": "lizard_attack_16.png" }
       ]
     },
     {
@@ -119,6 +117,51 @@
         { "key": "lizard", "frame": "lizard_run_02.png" },
         { "key": "lizard", "frame": "lizard_run_03.png" },
         { "key": "lizard", "frame": "lizard_run_04.png" }
+      ]
+    },
+    {
+      "key": "barbarian-idle",
+      "type": "frame",
+      "frameRate": 10,
+      "repeat": -1,
+      "frames": [
+        { "key": "barbarian", "frame": "barbarian_idle_01.png" },
+        { "key": "barbarian", "frame": "barbarian_idle_02.png" },
+        { "key": "barbarian", "frame": "barbarian_idle_03.png" },
+        { "key": "barbarian", "frame": "barbarian_idle_04.png" }
+      ]
+    },
+    {
+      "key": "barbarian-walk",
+      "type": "frame",
+      "frameRate": 10,
+      "repeat": -1,
+      "frames": [
+        { "key": "barbarian", "frame": "barbarian_run_01.png" },
+        { "key": "barbarian", "frame": "barbarian_run_02.png" },
+        { "key": "barbarian", "frame": "barbarian_run_03.png" },
+        { "key": "barbarian", "frame": "barbarian_run_04.png" }
+      ]
+    },
+    {
+      "key": "barbarian-attack",
+      "type": "frame",
+      "frameRate": 10,
+      "repeat": 0,
+      "frames": [
+        { "key": "barbarian", "frame": "barbarian_attack_01.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_02.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_03.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_04.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_05.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_06.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_07.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_08.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_09.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_10.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_11.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_12.png" },
+        { "key": "barbarian", "frame": "barbarian_attack_13.png" }
       ]
     }
   ]
