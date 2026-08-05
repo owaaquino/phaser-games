@@ -29,6 +29,8 @@ export class Player {
   }
 
   handlePlayerDeath() {
+    this.scene.physics.pause();
+    this.player.body.enable = false;
     this.scene.cameras.main.shake(500, 0.01);
     this.scene.cameras.main.fade(500, 0, 0, 0);
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
@@ -42,7 +44,9 @@ export class Player {
     this.isAttacking = true;
     this.player.anims.play('basic-attack', true);
 
-    this.player.setVelocityX(0);
+    if (this.player.body.blocked.down || this.player.body.touching.down) {
+      this.player.setVelocityX(0, 0);
+    }
 
     const bodyCenterX = this.player.body.center.x;
     const bodyCenterY = this.player.body.center.y;
