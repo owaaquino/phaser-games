@@ -1,6 +1,8 @@
 export class Enemies {
   constructor(scene) {
     this.scene = scene;
+    this.attackRange = 10;
+    this.detectionRange = 20;
   }
 
   createEnemies(map) {
@@ -14,17 +16,83 @@ export class Enemies {
         'lizard',
         'lizard_idle_01.png',
       );
-      enemy.setSize(3, 8);
+      enemy.isAttacking = false;
+      enemy.setSize(5, 8);
       enemy.setOrigin(0, 0);
-      enemy.setOffset(7);
+      enemy.setOffset(4, 7);
+
+      // create invisible hitbox for attacks
+      enemy.attackZone = this.scene.add.zone(0, 0, 4, 8);
+      this.scene.physics.add.existing(enemy.attackZone);
+      enemy.attackZone.body.setAllowGravity(false);
+      enemy.attackZone.body.debugShowBody = true;
+      enemy.attackZone.body.enable = false;
+      enemy.attackZone.setVisible(false);
+
+      this.scene.physics.add.overlap(
+        enemy.attackZone,
+        this.scene.player,
+        (attackZone, playerBody) => {
+          this.scene.playerController.handlePlayerDeath();
+        },
+      );
     });
   }
 
-  triggerEnemyAttack() {}
+  triggerEnemyAttack(player, enemy) {
+    enemy.isAttacking = true;
+    enemy.body.setVelocityX(0, 0);
+    enemy.anims.play('lizard-attack', true);
 
-  update() {
-    this.enemyObjects.children.iterate(function (child) {
-      child.anims.play('lizard-idle', true);
+    const bodyCenterX = enemy.body.center.x;
+    const bodyCenterY = enemy.body.center.y;
+    const attackOffsetX = enemy.flipX ? -8 : 8;
+
+    enemy.attackZone.setPosition(bodyCenterX + attackOffsetX, bodyCenterY);
+
+    enemy.attackZone.body.enable = true;
+
+    this.scene.time.delayedCall(150, () => {
+      if (!enemy.active) return;
+      enemy.attackZone.body.enable = false;
+      enemy.attackZone.setVisible(false);
+    });
+
+    enemy.once('animationcomplete-lizard-attack', () => {
+      if (!enemy.active) return;
+      enemy.isAttacking = false;
+    });
+  }
+
+  update(player) {
+    const enemyList = this.enemyObjects
+      .getChildren()
+      .filter((enemy) => enemy.active);
+
+    enemyList.forEach((enemy) => {
+      if (enemy.isAttacking) return;
+
+      const distance = Phaser.Math.Distance.BetweenPoints(
+        player.body,
+        enemy.body,
+      );
+
+      if (distance < this.attackRange) {
+        this.triggerEnemyAttack(player, enemy);
+      } else if (distance <= this.detectionRange) {
+        console.log('Enemy detected player');
+        this.scene.physics.moveToObject(enemy, player);
+
+        if (enemy.body.velocity.x < 0) {
+          enemy.setFlipX(true);
+        } else {
+          enemy.setFlipX(false);
+        }
+        enemy.anims.play('lizard-walk', true);
+      } else {
+        enemy.body.setVelocityX(0);
+        enemy.anims.play('lizard-idle', true);
+      }
     });
   }
 }

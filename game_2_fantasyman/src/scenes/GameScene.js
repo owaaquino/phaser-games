@@ -8,7 +8,7 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
-    const map = this.make.tilemap({ key: 'intro_1' });
+    const map = this.make.tilemap({ key: 'intro_2' });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
     map.createLayer('background', tileset);
@@ -114,6 +114,21 @@ class GameScene extends Phaser.Scene {
     // platform and enemies
     this.physics.add.collider(this.enemies, platforms);
 
+    // player attack zone and enemies
+    this.physics.add.overlap(
+      this.playerController.attackZone,
+      this.enemies,
+      (attackZone, enemy) => {
+        enemy.disableBody(true, true); // Disable enemy when hit
+        enemy.anims.stop(); // Stop enemy animation
+        enemy.visible = false; // Hide enemy sprite
+        // enemy.setTint(0xff0000); // Highlight enemy when hit
+        // this.time.delayedCall(100, () => {
+        //   enemy.clearTint(); // Remove highlight after delay
+        // });
+      },
+    );
+
     // door and player
     this.physics.add.overlap(this.player, this.keys, (player, key) => {
       this.doorOpened = true;
@@ -186,7 +201,7 @@ class GameScene extends Phaser.Scene {
     if (!this.enemyObjects) {
       return;
     } else {
-      this.enemyObjects.update();
+      this.enemyObjects.update(this.player);
     }
   }
 
