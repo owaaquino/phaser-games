@@ -15,12 +15,12 @@ export class Player {
     );
     this.player.setCollideWorldBounds(true);
     this.player.setSize(5, 8);
-    this.player.setOffset(5, 6);
+    this.player.setOffset(5);
 
     this.player.body.onWorldBounds = true;
 
     // create invisible hitbox for attacks
-    this.attackZone = this.scene.add.zone(0, 0, 8, 8);
+    this.attackZone = this.scene.add.zone(0, 0, 4, 8);
     this.scene.physics.add.existing(this.attackZone);
     this.attackZone.body.setAllowGravity(false);
     this.attackZone.body.debugShowBody = true;
@@ -29,6 +29,8 @@ export class Player {
   }
 
   handlePlayerDeath() {
+    this.scene.physics.pause();
+    this.player.body.enable = false;
     this.scene.cameras.main.shake(500, 0.01);
     this.scene.cameras.main.fade(500, 0, 0, 0);
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
@@ -42,12 +44,15 @@ export class Player {
     this.isAttacking = true;
     this.player.anims.play('basic-attack', true);
 
-    this.player.setVelocityX(0);
+    if (this.player.body.blocked.down || this.player.body.touching.down) {
+      this.player.setVelocityX(0, 0);
+    }
 
-    const offsetX = this.player.flipX ? -6 : 6;
+    const bodyCenterX = this.player.body.center.x;
+    const bodyCenterY = this.player.body.center.y;
+    const attackOffsetX = this.player.flipX ? -8 : 8;
 
-    this.attackZone.x = this.player.x + offsetX;
-    this.attackZone.y = this.player.y;
+    this.attackZone.setPosition(bodyCenterX + attackOffsetX, bodyCenterY);
 
     this.attackZone.body.enable = true;
 
