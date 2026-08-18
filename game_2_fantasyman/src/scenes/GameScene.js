@@ -2,6 +2,7 @@ import { Player } from '../components/player.js';
 import { Keys } from '../components/key.js';
 import { Door } from '../components/door.js';
 import { Enemies } from '../components/enemies.js';
+import { transitionToNextLevel } from '../utils/transitionToNextLevel.js';
 
 class GameScene extends Phaser.Scene {
   constructor() {
@@ -23,8 +24,6 @@ class GameScene extends Phaser.Scene {
     this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
     const lizardLayer = map.getObjectLayer('lizards');
-
-    console.log(lizardLayer);
 
     // Get texts object
     //TODO - maybe I can refactor this to separate utility function
@@ -129,7 +128,7 @@ class GameScene extends Phaser.Scene {
       },
     );
 
-    // door and player
+    // key and player
     this.physics.add.overlap(this.player, this.keys, (player, key) => {
       this.doorOpened = true;
       const doorZone = this.doorObject.getChildren()[0];
@@ -138,10 +137,12 @@ class GameScene extends Phaser.Scene {
 
       key.disableBody(true, true);
     });
-    // key and player
+    // door and player
     this.physics.add.overlap(this.player, this.doorObject, (player, door) => {
-      if (this.doorOpened) {
+      if (this.doorOpened && this.cursor.up.isDown) {
         console.log('Level Complete!');
+        const transition = new transitionToNextLevel(this);
+        transition.transition();
       }
     });
     // ladder and player

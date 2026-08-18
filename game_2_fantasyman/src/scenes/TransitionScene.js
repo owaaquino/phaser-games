@@ -19,17 +19,17 @@ class TransitionScene extends BaseMenuScene {
     const parsedFont = Phaser.GameObjects.RetroFont.Parse(this, config);
     this.cache.bitmapFont.add('bubbleMad', parsedFont);
 
-    this.add.bitmapText(50, 50, 'bubbleMad', 'LEVEL COMPLETE', 8);
+    this.add.bitmapText(70, 30, 'bubbleMad', 'LEVEL COMPLETE', 8);
 
-    this.initMenu(['Next Level', 'Main Menu']);
+    this.initMenu(['NEXT LEVEL', 'RETRY LEVEL', 'MAIN MENU']);
   }
 
   confirmSelection() {
     const selectedOption = this.menuOptions[this.selectedIndex];
 
-    if (selectedOption === 'Next Level') {
+    if (selectedOption === 'NEXT LEVEL') {
       this.scene.start('GameScene');
-    } else if (selectedOption === 'Main Menu') {
+    } else if (selectedOption === 'MAIN MENU') {
       this.scene.start('MenuScene');
     }
   }
