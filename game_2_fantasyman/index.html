@@ -27,6 +27,7 @@
     <script type="module">
       import Preload from './src/scenes/Preload.js';
       import GameScene from './src/scenes/GameScene.js';
+      import TransitionScene from './src/scenes/TransitionScene.js';
       import GameOver from './src/scenes/GameOver.js';
 
       const config = {
@@ -49,7 +50,7 @@
           mode: Phaser.Scale.FIT,
           autoCenter: Phaser.Scale.CENTER_BOTH,
         },
-        scene: [Preload, GameScene, GameOver],
+        scene: [Preload, GameScene, TransitionScene, GameOver],
       };
 
       const game = new Phaser.Game(config);
