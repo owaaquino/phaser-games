@@ -18,7 +18,7 @@ export class Enemies {
       );
       enemy.isAttacking = false;
       enemy.setSize(5, 8);
-      enemy.setOrigin(0, 0);
+      enemy.setOrigin(0.5, 0);
       enemy.setOffset(4, 7);
 
       // create invisible hitbox for attacks
