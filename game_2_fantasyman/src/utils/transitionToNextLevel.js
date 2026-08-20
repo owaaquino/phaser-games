@@ -1,3 +1,5 @@
+import GDM from '../GameManager.js';
+
 export class transitionToNextLevel {
   constructor(scene) {
     this.scene = scene;
@@ -9,7 +11,12 @@ export class transitionToNextLevel {
 
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
       //TODO: If done all levels victory scene before else uses transtion scene
-      this.scene.scene.start('TransitionScene');
+      if (GDM.state.currentLevel === 3) {
+        console.log('game over!');
+      } else {
+        GDM.state.currentLevel = GDM.state.currentLevel + 1;
+        this.scene.scene.start('TransitionScene');
+      }
     });
   }
 }

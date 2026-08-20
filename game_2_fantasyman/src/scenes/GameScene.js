@@ -1,3 +1,4 @@
+import GDM from '../GameManager.js';
 import { Player } from '../components/player.js';
 import { Keys } from '../components/key.js';
 import { Door } from '../components/door.js';
@@ -9,7 +10,8 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
-    const map = this.make.tilemap({ key: 'intro_2' });
+    const levelNumber = GDM.state.currentLevel;
+    const map = this.make.tilemap({ key: `intro_${GDM.state.currentLevel}` });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
     map.createLayer('background', tileset);
