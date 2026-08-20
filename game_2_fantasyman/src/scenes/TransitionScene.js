@@ -1,3 +1,4 @@
+import GDM from '../GameManager.js';
 import BaseMenuScene from '../BaseMenuScene.js';
 
 class TransitionScene extends BaseMenuScene {
@@ -30,7 +31,10 @@ class TransitionScene extends BaseMenuScene {
     if (selectedOption === 'NEXT LEVEL') {
       this.scene.start('GameScene');
     } else if (selectedOption === 'MAIN MENU') {
-      this.scene.start('MenuScene');
+      GDM.resetGame();
+      this.scene.start('GameScene');
+    } else if (selectedOption === 'RETRY LEVEL') {
+      this.scene.start('GameScene');
     }
   }
 }
