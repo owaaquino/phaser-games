@@ -56,6 +56,21 @@
         "type": "tilemapTiledJSON",
         "key": "intro_2",
         "url": "intro_2.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "intro_3",
+        "url": "intro_3.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "intro_4",
+        "url": "intro_4.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "intro_5",
+        "url": "intro_5.json"
       }
     ]
   }
