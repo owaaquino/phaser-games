@@ -29,13 +29,13 @@ export class Player {
   }
 
   handlePlayerDeath() {
-    // this.scene.physics.pause();
-    // this.player.body.enable = false;
-    // this.scene.cameras.main.shake(500, 0.01);
-    // this.scene.cameras.main.fade(500, 0, 0, 0);
-    // this.scene.cameras.main.once('camerafadeoutcomplete', () => {
-    //   this.scene.scene.restart();
-    // });
+    this.scene.physics.pause();
+    this.player.body.enable = false;
+    this.scene.cameras.main.shake(500, 0.01);
+    this.scene.cameras.main.fade(500, 0, 0, 0);
+    this.scene.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.scene.restart();
+    });
   }
 
   playerAttack() {
