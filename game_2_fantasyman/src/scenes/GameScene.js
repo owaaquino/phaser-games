@@ -11,7 +11,7 @@ class GameScene extends Phaser.Scene {
   }
   create() {
     const levelNumber = GDM.state.currentLevel;
-    const map = this.make.tilemap({ key: `intro_${GDM.state.currentLevel}` });
+    const map = this.make.tilemap({ key: `intro_${levelNumber}` });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
 
     map.createLayer('background', tileset);
@@ -29,7 +29,7 @@ class GameScene extends Phaser.Scene {
 
     // Get texts object
     //TODO - maybe I can refactor this to separate utility function
-    const textsObject = map.getObjectLayer('texts')['objects'];
+    const textsObject = map.getObjectLayer('texts');
 
     const config = {
       image: 'bubble_font',
@@ -41,16 +41,18 @@ class GameScene extends Phaser.Scene {
       spacing: { x: 0, y: 0 },
     };
 
-    const parsedFont = Phaser.GameObjects.RetroFont.Parse(this, config);
-    this.cache.bitmapFont.add('bubbleMad', parsedFont);
+    if (textsObject && textsObject.objects) {
+      const parsedFont = Phaser.GameObjects.RetroFont.Parse(this, config);
+      this.cache.bitmapFont.add('bubbleMad', parsedFont);
 
-    textsObject.forEach((text) => {
-      const textObject = this.add
-        .bitmapText(text.x, text.y, 'bubbleMad', text.text.text, 8)
-        .setAlpha(0.3);
+      textsObject.objects.forEach((text) => {
+        const textObject = this.add
+          .bitmapText(text.x, text.y, 'bubbleMad', text.text.text, 8)
+          .setAlpha(0.3);
 
-      textObject.setOrigin(0, 0);
-    });
+        textObject.setOrigin(0, 0);
+      });
+    }
 
     // Get ladder object
     const ladderObject = map.getObjectLayer('ladders')['objects'];

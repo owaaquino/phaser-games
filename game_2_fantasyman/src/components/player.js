@@ -31,11 +31,11 @@ export class Player {
   handlePlayerDeath() {
     // this.scene.physics.pause();
     // this.player.body.enable = false;
-    this.scene.cameras.main.shake(500, 0.01);
-    this.scene.cameras.main.fade(500, 0, 0, 0);
-    this.scene.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.scene.restart();
-    });
+    // this.scene.cameras.main.shake(500, 0.01);
+    // this.scene.cameras.main.fade(500, 0, 0, 0);
+    // this.scene.cameras.main.once('camerafadeoutcomplete', () => {
+    //   this.scene.scene.restart();
+    // });
   }
 
   playerAttack() {
@@ -107,7 +107,7 @@ export class Player {
       Phaser.Input.Keyboard.JustDown(cursor.space) &&
       (this.player.body.blocked.down || this.player.body.touching.down)
     ) {
-      this.player.setVelocityY(-90);
+      this.player.setVelocityY(-100);
     }
 
     if (Phaser.Input.Keyboard.JustDown(cursor.keyZ)) {
