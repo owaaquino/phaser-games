@@ -28,23 +28,9 @@ class GameScene extends Phaser.Scene {
     const lizardLayer = map.getObjectLayer('lizards');
 
     // Get texts object
-    //TODO - maybe I can refactor this to separate utility function
     const textsObject = map.getObjectLayer('texts');
 
-    const config = {
-      image: 'bubble_font',
-      width: 8,
-      height: 8,
-      chars:
-        '!"#$•%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÇÉÊÍÎÓÔÕŒÚÛÜ :¿',
-      charsPerRow: 81,
-      spacing: { x: 0, y: 0 },
-    };
-
     if (textsObject && textsObject.objects) {
-      const parsedFont = Phaser.GameObjects.RetroFont.Parse(this, config);
-      this.cache.bitmapFont.add('bubbleMad', parsedFont);
-
       textsObject.objects.forEach((text) => {
         const textObject = this.add
           .bitmapText(text.x, text.y, 'bubbleMad', text.text.text, 8)

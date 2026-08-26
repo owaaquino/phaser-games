@@ -28,6 +28,19 @@ class Preload extends Phaser.Scene {
   }
 
   create() {
+    const config = {
+      image: 'bubble_font',
+      width: 8,
+      height: 8,
+      chars:
+        '!"#$•%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÇÉÊÍÎÓÔÕŒÚÛÜ :¿',
+      charsPerRow: 81,
+      spacing: { x: 0, y: 0 },
+    };
+
+    const parsedFont = Phaser.GameObjects.RetroFont.Parse(this, config);
+    this.cache.bitmapFont.add('bubbleMad', parsedFont);
+
     this.anims.fromJSON(this.cache.json.get('animations_json'));
     this.scene.start('GameScene');
   }

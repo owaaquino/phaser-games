@@ -7,19 +7,6 @@ class TransitionScene extends BaseMenuScene {
   }
 
   create() {
-    const config = {
-      image: 'bubble_font',
-      width: 8,
-      height: 8,
-      chars:
-        '!"#$•%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÇÉÊÍÎÓÔÕŒÚÛÜ :¿',
-      charsPerRow: 81,
-      spacing: { x: 0, y: 0 },
-    };
-
-    const parsedFont = Phaser.GameObjects.RetroFont.Parse(this, config);
-    this.cache.bitmapFont.add('bubbleMad', parsedFont);
-
     this.add.bitmapText(70, 30, 'bubbleMad', 'LEVEL COMPLETE', 8);
 
     this.initMenu(['NEXT LEVEL', 'RETRY LEVEL', 'MAIN MENU']);
