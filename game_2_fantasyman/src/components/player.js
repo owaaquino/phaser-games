@@ -34,7 +34,7 @@ export class Player {
     this.scene.cameras.main.shake(500, 0.01);
     this.scene.cameras.main.fade(500, 0, 0, 0);
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.scene.restart();
+      this.scene.scene.start('GameOver');
     });
   }
 

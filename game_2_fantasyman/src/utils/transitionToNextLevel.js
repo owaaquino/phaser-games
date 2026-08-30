@@ -11,11 +11,11 @@ export class transitionToNextLevel {
 
     this.scene.cameras.main.once('camerafadeoutcomplete', () => {
       //TODO: If done all levels victory scene before else uses transtion scene
-      if (GDM.state.currentLevel === 3) {
-        console.log('game over!');
+      if (GDM.state.currentLevel === 5) {
+        this.scene.start('VictoryScene');
       } else {
-        GDM.state.currentLevel = GDM.state.currentLevel + 1;
         this.scene.scene.start('TransitionScene');
+        GDM.state.currentLevel = GDM.state.currentLevel + 1;
       }
     });
   }
