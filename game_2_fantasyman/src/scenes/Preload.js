@@ -42,7 +42,7 @@ class Preload extends Phaser.Scene {
     this.cache.bitmapFont.add('bubbleMad', parsedFont);
 
     this.anims.fromJSON(this.cache.json.get('animations_json'));
-    this.scene.start('GameScene');
+    this.scene.start('MenuScene');
   }
 }
 

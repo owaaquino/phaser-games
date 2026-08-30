@@ -29,6 +29,8 @@
       import GameScene from './src/scenes/GameScene.js';
       import TransitionScene from './src/scenes/TransitionScene.js';
       import GameOver from './src/scenes/GameOver.js';
+      import MenuScene from './src/scenes/MenuScene.js';
+      import VictoryScene from './src/scenes/VictoryScene.js';
 
       const config = {
         type: Phaser.AUTO, // Uses WebGL if available, otherwise Canvas
@@ -50,7 +52,14 @@
           mode: Phaser.Scale.FIT,
           autoCenter: Phaser.Scale.CENTER_BOTH,
         },
-        scene: [Preload, GameScene, TransitionScene, GameOver],
+        scene: [
+          Preload,
+          GameScene,
+          TransitionScene,
+          GameOver,
+          MenuScene,
+          VictoryScene,
+        ],
       };
 
       const game = new Phaser.Game(config);
