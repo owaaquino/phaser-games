@@ -69,6 +69,9 @@ export class Enemies {
       enemy.isAttacking = false;
       enemy.setOffset(4, 7);
 
+      enemy.attackZone.body.enable = false;
+      enemy.attackZone.setVisible(false);
+
       enemy.off('animationupdate');
     });
   }
