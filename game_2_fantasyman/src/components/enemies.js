@@ -64,13 +64,16 @@ export class Enemies {
       }
     });
 
+    this.scene.time.delayedCall(100, () => {
+      if (!enemy.active) return;
+      enemy.attackZone.body.enable = false;
+      enemy.attackZone.setVisible(false);
+    });
+
     enemy.once('animationcomplete-lizard-attack', () => {
       if (!enemy.active) return;
       enemy.isAttacking = false;
       enemy.setOffset(4, 7);
-
-      enemy.attackZone.body.enable = false;
-      enemy.attackZone.setVisible(false);
 
       enemy.off('animationupdate');
     });
