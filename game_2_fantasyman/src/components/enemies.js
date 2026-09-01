@@ -44,23 +44,32 @@ export class Enemies {
     enemy.body.setVelocityX(0, 0);
     enemy.anims.play('lizard-attack', true);
 
-    const bodyCenterX = enemy.body.center.x;
-    const bodyCenterY = enemy.body.center.y;
-    const attackOffsetX = enemy.flipX ? -8 : 8;
+    enemy.on('animationupdate', (anims, frame) => {
+      if (anims.key === 'lizard-attack') {
+        enemy.setOffset(4, 2);
 
-    enemy.attackZone.setPosition(bodyCenterX + attackOffsetX, bodyCenterY);
+        if (frame.index === 2) {
+          const bodyCenterX = enemy.body.center.x;
+          const bodyCenterY = enemy.body.center.y;
+          const attackOffsetX = enemy.flipX ? -8 : 8;
 
-    enemy.attackZone.body.enable = true;
+          enemy.attackZone.setPosition(
+            bodyCenterX + attackOffsetX,
+            bodyCenterY,
+          );
 
-    this.scene.time.delayedCall(150, () => {
-      if (!enemy.active) return;
-      enemy.attackZone.body.enable = false;
-      enemy.attackZone.setVisible(false);
+          enemy.attackZone.body.enable = true;
+          enemy.attackZone.setVisible(true);
+        }
+      }
     });
 
     enemy.once('animationcomplete-lizard-attack', () => {
       if (!enemy.active) return;
       enemy.isAttacking = false;
+      enemy.setOffset(4, 7);
+
+      enemy.off('animationupdate');
     });
   }
 
