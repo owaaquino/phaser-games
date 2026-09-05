@@ -108,6 +108,7 @@ class GameScene extends Phaser.Scene {
       this.playerController.attackZone,
       this.enemies,
       (attackZone, enemy) => {
+        GDM.updateTotalKills();
         enemy.disableBody(true, true); // Disable enemy when hit
         enemy.anims.stop(); // Stop enemy animation
         enemy.visible = false; // Hide enemy sprite

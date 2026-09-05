@@ -19,6 +19,7 @@ class GameOver extends BaseMenuScene {
       GDM.resetGame();
       this.scene.start('GameScene');
     } else if (selectedOption === 'RETRY LEVEL') {
+      GDM.updateTotalRetry();
       GDM.retryGame();
       this.scene.start('GameScene');
     }
