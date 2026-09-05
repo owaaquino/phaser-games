@@ -33,7 +33,7 @@ class Preload extends Phaser.Scene {
       width: 8,
       height: 8,
       chars:
-        '!"#$•%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÇÉÊÍÎÓÔÕŒÚÛÜ :¿',
+        '!"#$•%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÇÉÊÍÎÓÔÕŒÚÛÜ ↓¿',
       charsPerRow: 81,
       spacing: { x: 0, y: 0 },
     };
