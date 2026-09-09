@@ -3,6 +3,7 @@ import { Player } from '../components/player.js';
 import { Keys } from '../components/key.js';
 import { Door } from '../components/door.js';
 import { Enemies } from '../components/enemies.js';
+import { Timer } from '../components/timer.js';
 import { transitionToNextLevel } from '../utils/transitionToNextLevel.js';
 
 class GameScene extends Phaser.Scene {
@@ -67,6 +68,11 @@ class GameScene extends Phaser.Scene {
     );
 
     this.doorOpened = false;
+
+    // Create Timer
+    const timeInstance = new Timer(this);
+    timeInstance.createTimer();
+    this.timer = timeInstance.timerText;
 
     // Create Keys
     const keysInstance = new Keys(this);
@@ -176,6 +182,7 @@ class GameScene extends Phaser.Scene {
   }
 
   update() {
+    // console.log(this.time.now);
     const touchingLadder = this.physics.overlap(this.player, this.ladderObject);
     const pressingLeave = this.cursor.left.isDown || this.cursor.right.isDown;
 
