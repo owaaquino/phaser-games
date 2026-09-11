@@ -11,6 +11,11 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
+    if (!this.scene.isActive('UIScene')) {
+      this.scene.launch('UIScene');
+    }
+    this.scene.bringToTop('UIScene');
+
     const levelNumber = GDM.state.currentLevel;
     const map = this.make.tilemap({ key: `intro_${levelNumber}` });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
@@ -68,11 +73,6 @@ class GameScene extends Phaser.Scene {
     );
 
     this.doorOpened = false;
-
-    // Create Timer
-    const timeInstance = new Timer(this);
-    timeInstance.createTimer();
-    this.timer = timeInstance.timerText;
 
     // Create Keys
     const keysInstance = new Keys(this);

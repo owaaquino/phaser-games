@@ -7,6 +7,8 @@ class VictoryScene extends BaseMenuScene {
   }
 
   create() {
+    this.scene.stop('UIScene');
+
     this.add.bitmapText(70, 20, 'bubbleMad', 'VICTORY', 16);
 
     this.add.bitmapText(30, 50, 'bubbleMad', 'TOTAL KILLS', 8);

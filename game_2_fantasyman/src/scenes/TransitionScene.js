@@ -7,6 +7,8 @@ class TransitionScene extends BaseMenuScene {
   }
 
   create() {
+    this.scene.stop('UIScene');
+
     this.add.bitmapText(70, 30, 'bubbleMad', 'LEVEL COMPLETE', 8);
 
     this.initMenu(['NEXT LEVEL', 'RETRY LEVEL', 'MAIN MENU']);

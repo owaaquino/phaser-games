@@ -4,13 +4,7 @@ export class Timer {
   }
 
   createTimer() {
-    this.timerText = this.scene.add.bitmapText(
-      16,
-      16,
-      'bubbleMad',
-      'TIME: 00:00',
-      8,
-    );
+    this.timerText = this.scene.add.bitmapText(210, 2, 'bubbleMad', '00:00', 8);
 
     this.elapsedSeconds = 0;
 
@@ -31,6 +25,6 @@ export class Timer {
     const formattedMinutes = String(minutes).padStart(2, '0');
     const formattedSeconds = String(seconds).padStart(2, '0');
 
-    this.timerText.setText(`TIME: ${formattedMinutes}:${formattedSeconds}`);
+    this.timerText.setText(`${formattedMinutes}:${formattedSeconds}`);
   }
 }

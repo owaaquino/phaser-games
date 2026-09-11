@@ -6,6 +6,8 @@ class GameOver extends BaseMenuScene {
     super('GameOver');
   }
   create() {
+    this.scene.stop('UIScene');
+
     this.add.bitmapText(60, 30, 'bubbleMad', 'GAME OVER', 16);
     this.initMenu(['RETRY LEVEL', 'RESTART GAME', 'MAIN MENU']);
   }
