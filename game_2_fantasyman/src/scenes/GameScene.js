@@ -74,6 +74,10 @@ class GameScene extends Phaser.Scene {
 
     this.doorOpened = false;
 
+    // Create Timer
+    const timeInstance = new Timer(this);
+    timeInstance.createTimer();
+
     // Create Keys
     const keysInstance = new Keys(this);
     keysInstance.createKeys(map);
@@ -118,10 +122,6 @@ class GameScene extends Phaser.Scene {
         enemy.disableBody(true, true); // Disable enemy when hit
         enemy.anims.stop(); // Stop enemy animation
         enemy.visible = false; // Hide enemy sprite
-        // enemy.setTint(0xff0000); // Highlight enemy when hit
-        // this.time.delayedCall(100, () => {
-        //   enemy.clearTint(); // Remove highlight after delay
-        // });
       },
     );
 
@@ -182,7 +182,6 @@ class GameScene extends Phaser.Scene {
   }
 
   update() {
-    // console.log(this.time.now);
     const touchingLadder = this.physics.overlap(this.player, this.ladderObject);
     const pressingLeave = this.cursor.left.isDown || this.cursor.right.isDown;
 

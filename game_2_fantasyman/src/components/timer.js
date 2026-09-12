@@ -1,12 +1,12 @@
+import GDM from '../GameManager.js';
+
 export class Timer {
   constructor(scene) {
     this.scene = scene;
   }
 
   createTimer() {
-    this.timerText = this.scene.add.bitmapText(210, 2, 'bubbleMad', '00:00', 8);
-
-    this.elapsedSeconds = 0;
+    this.elapsedSeconds = GDM.state.elapsedTime;
 
     this.scene.time.addEvent({
       delay: 1000,
@@ -19,12 +19,6 @@ export class Timer {
   updateTimer() {
     this.elapsedSeconds++;
 
-    const minutes = Math.floor(this.elapsedSeconds / 60);
-    const seconds = this.elapsedSeconds % 60;
-
-    const formattedMinutes = String(minutes).padStart(2, '0');
-    const formattedSeconds = String(seconds).padStart(2, '0');
-
-    this.timerText.setText(`${formattedMinutes}:${formattedSeconds}`);
+    GDM.state.elapsedTime = this.elapsedSeconds;
   }
 }

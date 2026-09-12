@@ -6,6 +6,7 @@ class GameManager extends Phaser.Events.EventEmitter {
         currentLevel: 1,
         totalEnemyKilled: 0,
         totalRetry: 0,
+        elapsedTime: 0,
       };
       GameManager.instance = this;
     }
