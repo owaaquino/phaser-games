@@ -59,15 +59,12 @@ export class Enemies {
           );
 
           enemy.attackZone.body.enable = true;
-          enemy.attackZone.setVisible(true);
+          this.scene.time.delayedCall(100, () => {
+            if (!enemy.active) return;
+            enemy.attackZone.body.enable = false;
+          });
         }
       }
-    });
-
-    this.scene.time.delayedCall(100, () => {
-      if (!enemy.active) return;
-      enemy.attackZone.body.enable = false;
-      enemy.attackZone.setVisible(false);
     });
 
     enemy.once('animationcomplete-lizard-attack', () => {
