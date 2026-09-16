@@ -120,8 +120,8 @@ class GameScene extends Phaser.Scene {
       (attackZone, enemy) => {
         GDM.updateTotalKills();
         const knockbackDirection = enemy.x > this.player.x ? 20 : -20;
-        enemy.body.setVelocityX(knockbackDirection);
         enemy.anims.stop(); // Stop enemy animation
+        enemy.body.setVelocityX(knockbackDirection);
         enemy.setTint(0xff0000);
         this.time.delayedCall(500, () => {
           enemy.disableBody(true, true); // Disable enemy when hit

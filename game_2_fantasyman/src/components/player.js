@@ -1,3 +1,5 @@
+import GDM from '../GameManager.js';
+
 export class Player {
   constructor(scene) {
     this.scene = scene;
@@ -29,12 +31,17 @@ export class Player {
   }
 
   handlePlayerDeath() {
+    GDM.state.isDead = true;
     this.scene.physics.pause();
+    this.player.anims.stop();
+    this.player.setTint(0xff0000);
     this.player.body.enable = false;
-    this.scene.cameras.main.shake(500, 0.01);
-    this.scene.cameras.main.fade(500, 0, 0, 0);
-    this.scene.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.scene.start('GameOver');
+    this.scene.time.delayedCall(500, () => {
+      this.scene.cameras.main.shake(500, 0.01);
+      this.scene.cameras.main.fade(500, 0, 0, 0);
+      this.scene.cameras.main.once('camerafadeoutcomplete', () => {
+        this.scene.scene.start('GameOver');
+      });
     });
   }
 
@@ -64,6 +71,8 @@ export class Player {
   }
 
   update(cursor, isClimbing) {
+    if (GDM.state.isDead) return;
+
     if (Phaser.Input.Keyboard.JustDown(cursor.keyZ)) {
       this.playerAttack();
     }
