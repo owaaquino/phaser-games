@@ -3,6 +3,7 @@ import { Player } from '../components/player.js';
 import { Keys } from '../components/key.js';
 import { Door } from '../components/door.js';
 import { Enemies } from '../components/enemies.js';
+import { Timer } from '../components/timer.js';
 import { transitionToNextLevel } from '../utils/transitionToNextLevel.js';
 
 class GameScene extends Phaser.Scene {
@@ -10,6 +11,11 @@ class GameScene extends Phaser.Scene {
     super('GameScene');
   }
   create() {
+    if (!this.scene.isActive('UIScene')) {
+      this.scene.launch('UIScene');
+    }
+    this.scene.bringToTop('UIScene');
+
     const levelNumber = GDM.state.currentLevel;
     const map = this.make.tilemap({ key: `intro_${levelNumber}` });
     const tileset = map.addTilesetImage('platformer', 'tileimage');
@@ -68,6 +74,10 @@ class GameScene extends Phaser.Scene {
 
     this.doorOpened = false;
 
+    // Create Timer
+    const timeInstance = new Timer(this);
+    timeInstance.createTimer();
+
     // Create Keys
     const keysInstance = new Keys(this);
     keysInstance.createKeys(map);
@@ -108,13 +118,10 @@ class GameScene extends Phaser.Scene {
       this.playerController.attackZone,
       this.enemies,
       (attackZone, enemy) => {
+        GDM.updateTotalKills();
         enemy.disableBody(true, true); // Disable enemy when hit
         enemy.anims.stop(); // Stop enemy animation
         enemy.visible = false; // Hide enemy sprite
-        // enemy.setTint(0xff0000); // Highlight enemy when hit
-        // this.time.delayedCall(100, () => {
-        //   enemy.clearTint(); // Remove highlight after delay
-        // });
       },
     );
 

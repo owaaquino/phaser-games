@@ -6,6 +6,8 @@ class GameOver extends BaseMenuScene {
     super('GameOver');
   }
   create() {
+    this.scene.stop('UIScene');
+
     this.add.bitmapText(60, 30, 'bubbleMad', 'GAME OVER', 16);
     this.initMenu(['RETRY LEVEL', 'RESTART GAME', 'MAIN MENU']);
   }
@@ -19,6 +21,7 @@ class GameOver extends BaseMenuScene {
       GDM.resetGame();
       this.scene.start('GameScene');
     } else if (selectedOption === 'RETRY LEVEL') {
+      GDM.updateTotalRetry();
       GDM.retryGame();
       this.scene.start('GameScene');
     }
