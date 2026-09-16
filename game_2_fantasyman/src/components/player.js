@@ -50,7 +50,7 @@ export class Player {
 
     const bodyCenterX = this.player.body.center.x;
     const bodyCenterY = this.player.body.center.y;
-    const attackOffsetX = this.player.flipX ? -8 : 8;
+    const attackOffsetX = this.player.flipX ? -4 : 6;
 
     this.attackZone.setPosition(bodyCenterX + attackOffsetX, bodyCenterY);
 
