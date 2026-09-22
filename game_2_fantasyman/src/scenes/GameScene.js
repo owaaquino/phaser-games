@@ -118,7 +118,6 @@ class GameScene extends Phaser.Scene {
       this.playerController.attackZone,
       this.enemies,
       (attackZone, enemy) => {
-        console.log(GDM.state.totalEnemyKilled);
         const knockbackDirection = enemy.x > this.player.x ? 20 : -20;
         enemy.anims.stop(); // Stop enemy animation
         enemy.disableBody(true, true); // Disable enemy when hit
@@ -167,7 +166,6 @@ class GameScene extends Phaser.Scene {
 
     this.physics.add.overlap(this.player, spikes, (player, tile) => {
       if (tile.index === -1) return; // Skip if no tile is present
-      console.log('Player hit spikes');
       playerInstance.handlePlayerDeath();
     });
 
@@ -214,7 +212,6 @@ class GameScene extends Phaser.Scene {
       player.body.bottom - player.body.deltaY() <= ladder.body.top &&
       !this.cursor.down.isDown
     ) {
-      console.log('Player is on top of the ladder');
       return true;
     } else {
       return false;
