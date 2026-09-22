@@ -41,17 +41,16 @@ export class Enemies {
 
   triggerEnemyAttack(player, enemy) {
     enemy.isAttacking = true;
-    enemy.body.setVelocityX(0, 0);
+    enemy.body.setVelocity(0, 0);
     enemy.anims.play('lizard-attack', true);
+    enemy.setOffset(4, 1);
 
     enemy.on('animationupdate', (anims, frame) => {
       if (anims.key === 'lizard-attack') {
-        enemy.setOffset(4, 2);
-
         if (frame.index === 2) {
           const bodyCenterX = enemy.body.center.x;
           const bodyCenterY = enemy.body.center.y;
-          const attackOffsetX = enemy.flipX ? -8 : 8;
+          const attackOffsetX = enemy.flipX ? -4 : 6;
 
           enemy.attackZone.setPosition(
             bodyCenterX + attackOffsetX,

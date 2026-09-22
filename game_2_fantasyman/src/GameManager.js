@@ -7,6 +7,7 @@ class GameManager extends Phaser.Events.EventEmitter {
         totalEnemyKilled: 0,
         totalRetry: 0,
         elapsedTime: 0,
+        isDead: false,
       };
       GameManager.instance = this;
     }
@@ -15,27 +16,24 @@ class GameManager extends Phaser.Events.EventEmitter {
 
   updateTotalKills() {
     this.state.totalEnemyKilled += 1;
-    this.emit('KILLS_SCORE_CHANGED', this.state.totalEnemyKilled);
   }
 
   updateTotalRetry() {
     this.state.totalRetry += 1;
-    this.emit('RETRY_SCORE_CHANGED', this.state.totalRetry);
   }
 
   resetGame() {
     this.state.currentLevel = 1;
     this.state.totalEnemyKilled = 0;
     this.state.totalRetry = 0;
-    this.emit('RETRY_SCORE_CHANGED', 0);
-    this.emit('KILLS_SCORE_CHNAGED', 0);
+    this.state.isDead = false;
 
     this.removeAllListeners();
   }
 
   retryGame() {
     // add states for last score here
-
+    this.state.isDead = false;
     this.removeAllListeners();
   }
 }
