@@ -118,15 +118,16 @@ class GameScene extends Phaser.Scene {
       this.playerController.attackZone,
       this.enemies,
       (attackZone, enemy) => {
-        GDM.updateTotalKills();
+        console.log(GDM.state.totalEnemyKilled);
         const knockbackDirection = enemy.x > this.player.x ? 20 : -20;
         enemy.anims.stop(); // Stop enemy animation
+        enemy.disableBody(true, true); // Disable enemy when hit
         enemy.body.setVelocityX(knockbackDirection);
         enemy.setTint(0xff0000);
         this.time.delayedCall(500, () => {
-          enemy.disableBody(true, true); // Disable enemy when hit
           enemy.visible = false; // Hide enemy sprite
         });
+        GDM.updateTotalKills();
       },
     );
 
